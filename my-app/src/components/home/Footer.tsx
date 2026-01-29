@@ -41,6 +41,14 @@ const socialLinks = [
   },
 ];
 
+const announcements = [
+  "Yeni dönem kayıtları başladı — ekibe katılın!",
+  "Oyun kategorisinde 3 yeni proje yayında.",
+  "Tasarım ekibi için UI/UX workshopu bu hafta sonu.",
+  "Elektrik projelerinde yeni prototip testleri tamamlandı.",
+  "AI ekibi Teknofest için başvuruları açtı.",
+];
+
 export default function Footer() {
   return (
     <footer className="relative overflow-hidden border-t border-white/[0.06] bg-[#010205]">
@@ -139,17 +147,40 @@ export default function Footer() {
         </div>
 
         {/* Bottom Bar */}
-        <div className="mt-12 flex flex-col items-center justify-between gap-4 border-t border-white/[0.04] pt-8 sm:flex-row">
-          <p className="text-xs text-white/25">
-            © 2026 Runteg Tech Studio. Tüm hakları saklıdır.
-          </p>
-          <div className="flex items-center gap-6 text-xs text-white/25">
-            <a href="#" className="transition-colors duration-200 hover:text-white/50">
-              Gizlilik Politikası
-            </a>
-            <a href="#" className="transition-colors duration-200 hover:text-white/50">
-              Kullanım Şartları
-            </a>
+        <div className="mt-12 border-t border-white/[0.04] pt-8">
+          <div className="mb-6 overflow-hidden rounded-full border border-white/[0.08] bg-white/[0.03] px-2 py-2">
+            <div className="whitespace-nowrap text-sm text-white/70">
+              <div className="inline-flex animate-[marquee_22s_linear_infinite] items-center gap-8 pr-8">
+                {announcements.map((item, index) => (
+                  <span key={`a-${index}`} className="inline-flex items-center gap-3">
+                    <span className="h-2 w-2 rounded-full bg-pink-400/80 shadow-[0_0_8px_rgba(236,72,153,0.6)]" />
+                    {item}
+                  </span>
+                ))}
+              </div>
+              <div className="inline-flex animate-[marquee_22s_linear_infinite] items-center gap-8 pr-8">
+                {announcements.map((item, index) => (
+                  <span key={`b-${index}`} className="inline-flex items-center gap-3">
+                    <span className="h-2 w-2 rounded-full bg-pink-400/80 shadow-[0_0_8px_rgba(236,72,153,0.6)]" />
+                    {item}
+                  </span>
+                ))}
+              </div>
+            </div>
+          </div>
+
+          <div className="flex flex-col items-center justify-between gap-4 sm:flex-row">
+            <p className="text-xs text-white/25">
+              © 2026 Runteg Tech Studio. Tüm hakları saklıdır.
+            </p>
+            <div className="flex items-center gap-6 text-xs text-white/25">
+              <a href="#" className="transition-colors duration-200 hover:text-white/50">
+                Gizlilik Politikası
+              </a>
+              <a href="#" className="transition-colors duration-200 hover:text-white/50">
+                Kullanım Şartları
+              </a>
+            </div>
           </div>
         </div>
       </div>
