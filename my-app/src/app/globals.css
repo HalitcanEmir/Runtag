@@ -88,9 +88,29 @@ body {
 /* Shimmer animation for glass cards */
 @keyframes shimmer {
   0% {
-    transform: translateX(-100%) skewX(-12deg);
+    background-position: -200% 0;
   }
   100% {
-    transform: translateX(200%) skewX(-12deg);
+    background-position: 200% 0;
+  }
+}
+
+/* Pulse glow animation */
+@keyframes pulse-glow {
+  0%, 100% {
+    opacity: 0.6;
+  }
+  50% {
+    opacity: 1;
+  }
+}
+
+/* Smooth float animation */
+@keyframes float {
+  0%, 100% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(-10px);
   }
 }
