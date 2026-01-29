@@ -10,7 +10,7 @@ import Footer from "@/components/home/Footer";
 
 export default function Home() {
   return (
-    <div className="relative min-h-screen overflow-hidden">
+    <div className="relative min-h-screen overflow-x-hidden">
       <div className="pointer-events-none">
         <div className="nebula nebula--purple -top-40 -left-32 h-80 w-80" />
         <div className="nebula nebula--blue top-40 -right-40 h-96 w-96" />
