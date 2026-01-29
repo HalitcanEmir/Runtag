@@ -5,60 +5,71 @@ import Image from "next/image";
 
 const columns = [
   {
-    title: "Backlog",
+    title: "Fikir Aşaması",
     color: "red",
     tasks: [
       {
-        title: "Project Plan",
-        description: "Lorem ipsum dolor sit amet, consectetur adipiscing elit.",
+        title: "Beyin Fırtınası",
+        description: "Yeni proje fikirleri toplantılar ve Discord'da paylaşılıyor.",
         image: "https://images.unsplash.com/photo-1517842645767-c639042777db?w=400&q=80",
         members: 3,
         hasSubtask: true,
       },
       {
-        title: "Tasks Needed",
-        description: "Lorem ipsum dolor sit amet, consectetur adipiscing elit.",
+        title: "Ekip Oluşturma",
+        description: "İlgilenen herkes projeye katılabilir, deneyim şart değil!",
         members: 2,
       },
     ],
   },
   {
-    title: "In Progress",
+    title: "Geliştirme",
     color: "yellow",
     tasks: [
       {
-        title: "UI UX",
-        description: "Lorem ipsum dolor sit amet, consectetur adipiscing elit.",
+        title: "Birlikte Öğrenme",
+        description: "Tecrübeli üyeler yeni başlayanlara mentorluk yapıyor.",
         members: 2,
       },
       {
-        title: "Development",
-        description: "Lorem ipsum dolor sit amet, consectetur adipiscing elit.",
+        title: "Yarışma Ekipleri",
+        description: "Teknofest, hackathon ve yarışmalar için özel ekipler kuruluyor.",
+        image: "https://images.unsplash.com/photo-1552664730-d307ca884978?w=400&q=80",
+        members: 4,
+      },
+    ],
+  },
+  {
+    title: "Test & Demo",
+    color: "blue",
+    tasks: [
+      {
+        title: "Canlı Demolar",
+        description: "Projeler gerçek kullanıcılara sunuluyor ve geri bildirim alınıyor.",
+        image: "https://images.unsplash.com/photo-1512941937669-90a1b58e7e9c?w=400&q=80",
+        members: 2,
+      },
+      {
+        title: "Haftalık Sprintler",
+        description: "Esnek çalışma saatleri, herkes kendi hızında katkı sağlıyor.",
         members: 3,
       },
     ],
   },
   {
-    title: "Review",
-    color: "blue",
-    tasks: [
-      {
-        title: "Promo",
-        description: "Lorem ipsum dolor sit amet, consectetur adipiscing elit.",
-        image: "https://images.unsplash.com/photo-1512941937669-90a1b58e7e9c?w=400&q=80",
-        members: 2,
-      },
-    ],
-  },
-  {
-    title: "Completed",
+    title: "Yayınlandı",
     color: "green",
     tasks: [
       {
-        title: "Marketing Images",
-        description: "Lorem ipsum dolor sit amet, consectetur adipiscing elit.",
-        image: "https://images.unsplash.com/photo-1541701494587-cb58502866ab?w=400&q=80",
+        title: "Portfolyo & CV",
+        description: "Tamamlanan projeler CV'ne eklenir, referans olarak kullanılır.",
         members: 4,
+      },
+      {
+        title: "Sitede Listeleme",
+        description: "Yaptığınız projeler sitemizde sergileniyor, herkes görebiliyor!",
+        image: "https://images.unsplash.com/photo-1541701494587-cb58502866ab?w=400&q=80",
+        members: 5,
       },
     ],
   },
@@ -72,21 +83,21 @@ export default function Crews() {
         <div className="flex flex-col gap-6 lg:flex-row lg:items-end lg:justify-between">
           <div className="space-y-3 text-center lg:text-left">
             <p className="text-[11px] font-semibold uppercase tracking-[0.3em] text-white/50">
-              Ekipler
+              Nasıl Çalışıyoruz
             </p>
             <h2 className="text-3xl font-bold tracking-tight text-white sm:text-4xl lg:text-5xl">
-              Fikirler Etrafında Kurulan Takımlar
+              Neden Bize Katılmalısın?
             </h2>
             <p className="mx-auto max-w-xl text-sm text-white/60 lg:mx-0">
-              Sabit bir şirket yapısı yerine esnek ekipler kuruyoruz.
-              Geliştiriciler, tasarımcılar ve yapımcılar belirli projeleri tamamlamak için bir araya geliyor.
+              Deneyim seviyesi fark etmez! Öğrenci, yeni mezun veya profesyonel — herkes hoş geldin.
+              Gerçek projeler üzerinde çalış, portfolyönü güçlendir ve yeni arkadaşlar edin.
             </p>
           </div>
           <a
             href="#join"
             className="inline-flex items-center gap-2 text-sm font-semibold uppercase tracking-wider text-pink-400 transition hover:text-pink-300"
           >
-            Nasıl Katılırım →
+            Hemen Katıl →
           </a>
         </div>
       </div>
@@ -106,23 +117,24 @@ export default function Crews() {
           {/* Header Row */}
           <div className="relative mb-6 flex flex-wrap items-center justify-between gap-4">
             <div className="flex items-center gap-4">
-              <h3 className="text-lg font-semibold text-white/80">Aktif Görevler</h3>
+              <h3 className="text-lg font-semibold text-white/80">Proje Süreci</h3>
               <div className="flex gap-2">
-                <span className="rounded-full border border-white/10 bg-white/5 px-3 py-1 text-[11px] text-white/50">
-                  4 Ekip
+                <span className="rounded-full border border-emerald-500/30 bg-emerald-500/10 px-3 py-1 text-[11px] text-emerald-400">
+                  Açık Pozisyonlar
                 </span>
                 <span className="rounded-full border border-white/10 bg-white/5 px-3 py-1 text-[11px] text-white/50">
-                  12 Görev
+                  Herkes Katılabilir
                 </span>
               </div>
             </div>
             <div className="flex items-center gap-2">
+              <span className="text-[11px] text-white/40">Aktif Üyeler</span>
               <div className="flex -space-x-2">
                 <div className="h-7 w-7 rounded-full border border-white/20 bg-gradient-to-br from-pink-400 to-purple-500" />
                 <div className="h-7 w-7 rounded-full border border-white/20 bg-gradient-to-br from-blue-400 to-cyan-500" />
                 <div className="h-7 w-7 rounded-full border border-white/20 bg-gradient-to-br from-orange-400 to-red-500" />
                 <div className="flex h-7 w-7 items-center justify-center rounded-full border border-white/20 bg-white/10 text-[10px] text-white/60">
-                  +5
+                  +12
                 </div>
               </div>
             </div>
