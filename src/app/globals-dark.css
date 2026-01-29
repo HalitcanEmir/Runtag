@@ -1,0 +1,29 @@
+/* Açık mod stilleri */
+html:not(.dark) {
+  --background: #f5f5f5;
+  --foreground: #1a1a1a;
+}
+
+html:not(.dark) body {
+  background: radial-gradient(circle at top left, #e5e5e5 0, #f0f0f0 50%, #f5f5f5 100%);
+  color: var(--foreground);
+}
+
+html:not(.dark) .bg-app-gradient {
+  background:
+    radial-gradient(circle at top left, rgba(124, 58, 237, 0.1), transparent 55%),
+    radial-gradient(circle at bottom right, rgba(56, 189, 248, 0.1), transparent 55%),
+    linear-gradient(to bottom, #f5f5f5, #f0f0f0 55%, #f5f5f5 100%);
+}
+
+html:not(.dark) .nebula {
+  opacity: 0.3;
+}
+
+html:not(.dark) .nebula--purple {
+  background: radial-gradient(circle, rgba(124, 58, 237, 0.2), transparent 60%);
+}
+
+html:not(.dark) .nebula--blue {
+  background: radial-gradient(circle, rgba(56, 189, 248, 0.2), transparent 60%);
+}
