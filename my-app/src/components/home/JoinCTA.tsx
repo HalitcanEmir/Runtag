@@ -1,45 +1,66 @@
-import SectionWrapper from "./SectionWrapper";
+"use client";
+
+import { motion } from "framer-motion";
 
 export default function JoinCTA() {
   return (
-    <SectionWrapper
-      id="join"
-      className="relative overflow-hidden rounded-[32px] border border-white/15 bg-gradient-to-r from-[#020617] via-[#020617] to-[#020617]"
-    >
-      <div className="pointer-events-none absolute inset-0 bg-[radial-gradient(circle_at_0%_0%,rgba(124,58,237,0.45),transparent_55%),radial-gradient(circle_at_100%_100%,rgba(56,189,248,0.45),transparent_55%)] opacity-90" />
-
-      <div className="relative flex flex-col items-start gap-6 px-6 py-10 text-slate-50 sm:px-10 md:flex-row md:items-center md:justify-between">
-        <div className="space-y-4">
-          <p className="text-[11px] font-semibold uppercase tracking-[0.3em] text-slate-200/80">
-            Join the Studio
-          </p>
-          <h2 className="text-2xl font-semibold uppercase tracking-[0.2em] sm:text-3xl">
-            Wanna build something with us?
-          </h2>
-          <p className="max-w-xl text-sm text-slate-100/90">
-            We’re always looking for developers, artists, designers and curious
-            minds. Join a crew, ship a project, learn together.
-          </p>
+    <section id="join" className="py-16">
+      <motion.div
+        initial={{ opacity: 0, y: 20 }}
+        whileInView={{ opacity: 1, y: 0 }}
+        viewport={{ once: true }}
+        transition={{ duration: 0.6 }}
+        className="relative overflow-hidden rounded-2xl border border-white/[0.06] bg-gradient-to-br from-white/[0.02] via-white/[0.01] to-transparent"
+      >
+        {/* Background effects */}
+        <div className="pointer-events-none absolute inset-0">
+          <div className="absolute -left-20 -top-20 h-60 w-60 rounded-full bg-purple-500/10 blur-3xl" />
+          <div className="absolute -bottom-20 -right-20 h-60 w-60 rounded-full bg-pink-500/10 blur-3xl" />
         </div>
 
-        <div className="flex flex-col items-start gap-3 md:items-end">
-          <div className="flex flex-wrap gap-3">
-            <button className="group relative inline-flex items-center justify-center overflow-hidden rounded-full px-6 py-2.5 text-xs font-semibold uppercase tracking-[0.25em] text-white">
-              <span className="absolute inset-0 accent-gradient opacity-90 transition duration-300 group-hover:opacity-100" />
-              <span className="absolute inset-0 bg-white/10 opacity-0 blur-xl transition duration-300 group-hover:opacity-70" />
-              <span className="relative">Apply to Join a Crew</span>
-            </button>
-            <button className="inline-flex items-center justify-center rounded-full border border-white/40 bg-white/5 px-6 py-2.5 text-xs font-semibold uppercase tracking-[0.25em] text-slate-50/90 transition hover:bg-white/10">
-              Pitch a Project
-            </button>
+        {/* Content */}
+        <div className="relative flex flex-col gap-8 p-6 sm:p-8 lg:flex-row lg:items-center lg:justify-between lg:p-10">
+          {/* Left side - Text */}
+          <div className="max-w-lg">
+            <p className="text-[10px] font-medium uppercase tracking-[0.5em] text-white/30">
+              Stüdyoya Katıl
+            </p>
+            <h2 className="mt-3 text-xl font-semibold text-white/90 sm:text-2xl">
+              Bizimle Bir Şeyler İnşa Etmek İster misin?
+            </h2>
+            <p className="mt-3 text-sm leading-relaxed text-white/40">
+              Geliştiriciler, tasarımcılar, sanatçılar ve meraklı zihinler arıyoruz. 
+              Bir ekibe katıl, bir proje geliştir, birlikte öğren.
+            </p>
           </div>
-          <p className="max-w-xs text-[11px] text-slate-200/80">
-            You can start with just your GitHub, itch.io, Behance or portfolio
-            link.
-          </p>
+
+          {/* Right side - CTAs */}
+          <div className="flex flex-col gap-4">
+            <div className="flex flex-wrap gap-3">
+              {/* Primary CTA */}
+              <a
+                href="#"
+                className="group relative overflow-hidden rounded-full bg-gradient-to-r from-pink-500 to-purple-500 px-5 py-2.5 text-xs font-semibold text-white shadow-[0_4px_20px_rgba(236,72,153,0.3)] transition-all duration-300 hover:shadow-[0_6px_28px_rgba(236,72,153,0.45)]"
+              >
+                <span className="relative z-10">Ekibe Başvur</span>
+                <span className="absolute inset-0 bg-gradient-to-r from-pink-400 to-purple-400 opacity-0 transition-opacity duration-300 group-hover:opacity-100" />
+              </a>
+              
+              {/* Secondary CTA */}
+              <a
+                href="#"
+                className="rounded-full border border-white/10 bg-white/[0.02] px-5 py-2.5 text-xs font-medium text-white/70 transition-all duration-300 hover:border-white/20 hover:bg-white/[0.05] hover:text-white/90"
+              >
+                Proje Öner
+              </a>
+            </div>
+            
+            <p className="text-[10px] text-white/25">
+              GitHub, itch.io, Behance veya portfolyo linkinle başlayabilirsin.
+            </p>
+          </div>
         </div>
-      </div>
-    </SectionWrapper>
+      </motion.div>
+    </section>
   );
 }
-

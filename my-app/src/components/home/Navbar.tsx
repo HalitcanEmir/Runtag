@@ -6,10 +6,10 @@ import { motion, AnimatePresence } from "framer-motion";
 
 const navItems = [
   { label: "Ana Sayfa", href: "#top", id: "top" },
-  { label: "Hizmetler", href: "#projects", id: "projects" },
+  { label: "Yetenekler", href: "#capabilities", id: "capabilities" },
+  { label: "Projeler", href: "#projects", id: "projects" },
   { label: "Ekip", href: "#crews", id: "crews" },
-  { label: "Hakkımızda", href: "#process", id: "process" },
-  { label: "İletişim", href: "#join", id: "join" },
+  { label: "Katıl", href: "#join", id: "join" },
 ];
 
 export default function Navbar() {

@@ -104,7 +104,7 @@ export default function Hero() {
               transition={{ delay: 0.4, duration: 0.5 }}
               className="text-[11px] font-medium uppercase tracking-[0.35em] text-white/50"
             >
-              Crew Based Tech Studio
+              Ekip Bazlı Teknoloji Stüdyosu
             </motion.p>
 
             {/* Typewriter - bigger and more prominent */}

@@ -92,7 +92,7 @@ const columns = [
 
 export default function Crews() {
   return (
-    <section id="crews" className="relative overflow-hidden py-32">
+    <section id="crews" className="relative overflow-hidden py-20">
       {/* Ambient Background Effects */}
       <div className="pointer-events-none absolute inset-0">
         <div className="absolute left-1/4 top-1/3 h-[600px] w-[600px] rounded-full bg-purple-600/10 blur-[120px]" />
