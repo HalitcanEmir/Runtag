@@ -1,101 +1,223 @@
 "use client";
 
 import { motion } from "framer-motion";
-import SectionWrapper from "./SectionWrapper";
+import Image from "next/image";
 
-const crewCards = [
+const columns = [
   {
-    title: "Game Crew",
-    description: "Indie, jam and competition games across PC, mobile and web.",
-    tags: ["Unity", "Unreal", "Godot"],
-    lookingFor: "Developers, Artists, Sound",
+    title: "Backlog",
+    color: "red",
+    tasks: [
+      {
+        title: "Project Plan",
+        description: "Lorem ipsum dolor sit amet, consectetur adipiscing elit.",
+        image: "https://images.unsplash.com/photo-1517842645767-c639042777db?w=400&q=80",
+        members: 3,
+        hasSubtask: true,
+      },
+      {
+        title: "Tasks Needed",
+        description: "Lorem ipsum dolor sit amet, consectetur adipiscing elit.",
+        members: 2,
+      },
+    ],
   },
   {
-    title: "Web Crew",
-    description:
-      "Product builders for dashboards, SaaS and full-stack student projects.",
-    tags: ["Next.js", "Django", "FastAPI"],
-    lookingFor: "Full-stack, UI/UX, PM",
+    title: "In Progress",
+    color: "yellow",
+    tasks: [
+      {
+        title: "UI UX",
+        description: "Lorem ipsum dolor sit amet, consectetur adipiscing elit.",
+        members: 2,
+      },
+      {
+        title: "Development",
+        description: "Lorem ipsum dolor sit amet, consectetur adipiscing elit.",
+        members: 3,
+      },
+    ],
   },
   {
-    title: "AI / Data Crew",
-    description:
-      "From tiny ML demos to data-heavy competition cases and research PoCs.",
-    tags: ["Python", "ML", "Data"],
-    lookingFor: "ML, Data, Backend",
+    title: "Review",
+    color: "blue",
+    tasks: [
+      {
+        title: "Promo",
+        description: "Lorem ipsum dolor sit amet, consectetur adipiscing elit.",
+        image: "https://images.unsplash.com/photo-1512941937669-90a1b58e7e9c?w=400&q=80",
+        members: 2,
+      },
+    ],
   },
   {
-    title: "Competition Crew",
-    description:
-      "Focused teams for Teknofest and global hackathons with clear deadlines.",
-    tags: ["Teknofest", "Hackathons"],
-    lookingFor: "Leads, Builders, Operators",
+    title: "Completed",
+    color: "green",
+    tasks: [
+      {
+        title: "Marketing Images",
+        description: "Lorem ipsum dolor sit amet, consectetur adipiscing elit.",
+        image: "https://images.unsplash.com/photo-1541701494587-cb58502866ab?w=400&q=80",
+        members: 4,
+      },
+    ],
   },
 ];
 
 export default function Crews() {
   return (
-    <SectionWrapper id="crews" className="space-y-10">
-      <div className="flex flex-col gap-6 lg:flex-row lg:items-end lg:justify-between">
-        <div className="space-y-3">
-          <p className="text-[11px] font-semibold uppercase tracking-[0.3em] text-slate-400">
-            Crews
-          </p>
-          <h2 className="text-2xl font-semibold uppercase tracking-[0.18em] text-slate-100 sm:text-3xl">
-            Teams built around ideas
-          </h2>
-          <p className="max-w-xl text-sm text-slate-300">
-            Instead of a fixed company org-chart, we build flexible crews.
-            Developers, artists and makers group up to ship specific projects.
-          </p>
+    <section id="crews" className="relative py-20">
+      {/* Section Header */}
+      <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
+        <div className="flex flex-col gap-6 lg:flex-row lg:items-end lg:justify-between">
+          <div className="space-y-3 text-center lg:text-left">
+            <p className="text-[11px] font-semibold uppercase tracking-[0.3em] text-white/50">
+              Ekipler
+            </p>
+            <h2 className="text-3xl font-bold tracking-tight text-white sm:text-4xl lg:text-5xl">
+              Fikirler Etrafında Kurulan Takımlar
+            </h2>
+            <p className="mx-auto max-w-xl text-sm text-white/60 lg:mx-0">
+              Sabit bir şirket yapısı yerine esnek ekipler kuruyoruz.
+              Geliştiriciler, tasarımcılar ve yapımcılar belirli projeleri tamamlamak için bir araya geliyor.
+            </p>
+          </div>
+          <a
+            href="#join"
+            className="inline-flex items-center gap-2 text-sm font-semibold uppercase tracking-wider text-pink-400 transition hover:text-pink-300"
+          >
+            Nasıl Katılırım →
+          </a>
         </div>
-        <a
-          href="#join"
-          className="text-xs font-semibold uppercase tracking-[0.28em] text-sky-300 hover:text-sky-200"
-        >
-          How to join →
-        </a>
       </div>
 
-      <div className="grid gap-5 md:grid-cols-2">
-        {crewCards.map((crew, index) => (
-          <motion.article
-            key={crew.title}
-            initial={{ opacity: 0, y: 20 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true, margin: "0px 0px -20% 0px" }}
-            transition={{ duration: 0.5, delay: index * 0.08 }}
-            className="glass-panel-subtle group relative flex flex-col justify-between gap-4 border border-white/10 p-5 transition duration-200 hover:-translate-y-1 hover:border-sky-400/70"
-          >
-            <div className="flex items-center justify-between gap-2">
-              <h3 className="text-sm font-semibold uppercase tracking-[0.24em] text-slate-100">
-                {crew.title}
-              </h3>
-              <span className="rounded-full border border-emerald-400/30 bg-emerald-500/10 px-3 py-1 text-[10px] uppercase tracking-[0.25em] text-emerald-300">
-                Open slots
-              </span>
-            </div>
-            <p className="text-xs leading-relaxed text-slate-300/90">
-              {crew.description}
-            </p>
-            <div className="flex flex-wrap gap-2">
-              {crew.tags.map((tag) => (
-                <span
-                  key={tag}
-                  className="rounded-full bg-slate-900/70 px-3 py-1 text-[10px] uppercase tracking-[0.22em] text-slate-300"
-                >
-                  {tag}
+      {/* Kanban Board - Integrated Design */}
+      <div className="mx-auto mt-12 max-w-7xl px-4 sm:px-6 lg:px-8">
+        <motion.div
+          initial={{ opacity: 0, y: 30 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true }}
+          transition={{ duration: 0.6 }}
+          className="relative"
+        >
+          {/* Subtle background glow - matching page theme */}
+          <div className="pointer-events-none absolute -inset-4 rounded-3xl bg-gradient-to-r from-purple-500/5 via-transparent to-pink-500/5 blur-2xl" />
+
+          {/* Header Row */}
+          <div className="relative mb-6 flex flex-wrap items-center justify-between gap-4">
+            <div className="flex items-center gap-4">
+              <h3 className="text-lg font-semibold text-white/80">Aktif Görevler</h3>
+              <div className="flex gap-2">
+                <span className="rounded-full border border-white/10 bg-white/5 px-3 py-1 text-[11px] text-white/50">
+                  4 Ekip
                 </span>
-              ))}
+                <span className="rounded-full border border-white/10 bg-white/5 px-3 py-1 text-[11px] text-white/50">
+                  12 Görev
+                </span>
+              </div>
             </div>
-            <div className="pt-1 text-[11px] text-slate-400">
-              Looking for:{" "}
-              <span className="text-slate-200">{crew.lookingFor}</span>
+            <div className="flex items-center gap-2">
+              <div className="flex -space-x-2">
+                <div className="h-7 w-7 rounded-full border border-white/20 bg-gradient-to-br from-pink-400 to-purple-500" />
+                <div className="h-7 w-7 rounded-full border border-white/20 bg-gradient-to-br from-blue-400 to-cyan-500" />
+                <div className="h-7 w-7 rounded-full border border-white/20 bg-gradient-to-br from-orange-400 to-red-500" />
+                <div className="flex h-7 w-7 items-center justify-center rounded-full border border-white/20 bg-white/10 text-[10px] text-white/60">
+                  +5
+                </div>
+              </div>
             </div>
-          </motion.article>
-        ))}
+          </div>
+
+          {/* Kanban Columns */}
+          <div className="relative grid gap-5 sm:grid-cols-2 lg:grid-cols-4">
+            {columns.map((column, colIndex) => (
+              <motion.div
+                key={column.title}
+                initial={{ opacity: 0, y: 20 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                viewport={{ once: true }}
+                transition={{ duration: 0.4, delay: colIndex * 0.1 }}
+                className="flex flex-col gap-3"
+              >
+                {/* Column Header */}
+                <div className="flex items-center justify-between">
+                  <div className="flex items-center gap-2">
+                    <span
+                      className={`h-2 w-2 rounded-full ${
+                        column.color === "red"
+                          ? "bg-red-400"
+                          : column.color === "yellow"
+                          ? "bg-yellow-400"
+                          : column.color === "blue"
+                          ? "bg-blue-400"
+                          : "bg-emerald-400"
+                      }`}
+                    />
+                    <span className="text-[13px] font-medium text-white/70">{column.title}</span>
+                  </div>
+                  <span className="text-[11px] text-white/30">{column.tasks.length}</span>
+                </div>
+
+                {/* Tasks */}
+                <div className="flex flex-col gap-3">
+                  {column.tasks.map((task) => (
+                    <div
+                      key={task.title}
+                      className="group rounded-2xl border border-white/[0.08] bg-white/[0.02] p-3 transition-all duration-300 hover:border-white/15 hover:bg-white/[0.05]"
+                    >
+                      {/* Task Image */}
+                      {task.image && (
+                        <div className="relative mb-3 aspect-video overflow-hidden rounded-xl">
+                          <Image
+                            src={task.image}
+                            alt={task.title}
+                            fill
+                            className="object-cover transition-transform duration-500 group-hover:scale-105"
+                          />
+                          <div className="absolute inset-0 bg-gradient-to-t from-black/30 to-transparent" />
+                        </div>
+                      )}
+
+                      {/* Task Content */}
+                      <h4 className="text-[13px] font-medium text-white/90">{task.title}</h4>
+                      <p className="mt-1 text-[11px] leading-relaxed text-white/40 line-clamp-2">{task.description}</p>
+
+                      {/* Task Footer */}
+                      <div className="mt-3 flex items-center justify-between">
+                        <div className="flex -space-x-1.5">
+                          {[...Array(Math.min(task.members, 3))].map((_, i) => (
+                            <div
+                              key={i}
+                              className={`h-5 w-5 rounded-full border border-white/10 ${
+                                i === 0 ? "bg-gradient-to-br from-pink-400 to-purple-500" :
+                                i === 1 ? "bg-gradient-to-br from-blue-400 to-cyan-500" :
+                                "bg-gradient-to-br from-orange-400 to-yellow-500"
+                              }`}
+                            />
+                          ))}
+                          {task.members > 3 && (
+                            <div className="flex h-5 w-5 items-center justify-center rounded-full border border-white/10 bg-white/5 text-[9px] text-white/50">
+                              +{task.members - 3}
+                            </div>
+                          )}
+                        </div>
+                        <div className="flex items-center gap-1.5 text-white/25">
+                          <svg className="h-3.5 w-3.5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d="M8 12h.01M12 12h.01M16 12h.01M21 12c0 4.418-4.03 8-9 8a9.863 9.863 0 01-4.255-.949L3 20l1.395-3.72C3.512 15.042 3 13.574 3 12c0-4.418 4.03-8 9-8s9 3.582 9 8z" />
+                          </svg>
+                          <svg className="h-3.5 w-3.5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d="M15.172 7l-6.586 6.586a2 2 0 102.828 2.828l6.414-6.586a4 4 0 00-5.656-5.656l-6.415 6.585a6 6 0 108.486 8.486L20.5 13" />
+                          </svg>
+                        </div>
+                      </div>
+                    </div>
+                  ))}
+                </div>
+              </motion.div>
+            ))}
+          </div>
+        </motion.div>
       </div>
-    </SectionWrapper>
+    </section>
   );
 }
-
