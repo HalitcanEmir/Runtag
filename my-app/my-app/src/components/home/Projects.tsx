@@ -2,11 +2,9 @@
 
 import { motion } from "framer-motion";
 import Image from "next/image";
-import Link from "next/link";
 
-export const projects = [
+const projects = [
   {
-    id: "nebula-drift",
     category: "Oyun",
     name: "Nebula Drift",
     description: "Arcade tarzı uzay oyunu prototipi",
@@ -15,10 +13,8 @@ export const projects = [
     icon: "🎮",
     stats: "2.4K indirme",
     date: "2 hafta önce",
-    longDescription: "Nebula Drift, hızlı tempolu arcade oyunudur. Oyuncu karakteri bir uzay gemisiyle kontrol eder ve engelleri aşarak ilerler.",
   },
   {
-    id: "crewboard-dashboard",
     category: "Web",
     name: "Crewboard Dashboard",
     description: "Ekip yönetim ve sprint takip paneli",
@@ -27,10 +23,8 @@ export const projects = [
     icon: "📊",
     stats: "1.8K kullanıcı",
     date: "1 ay önce",
-    longDescription: "Ekip yönetimi için modern bir dashboard uygulaması. Sprint planlama ve takip işlemlerini kolaylaştırır.",
   },
   {
-    id: "teknofest-control-hub",
     category: "AI",
     name: "Teknofest Control Hub",
     description: "Yarışma telemetri ve kontrol merkezi",
@@ -39,10 +33,8 @@ export const projects = [
     icon: "🤖",
     stats: "Finalist",
     date: "3 ay önce",
-    longDescription: "Teknofest yarışması için geliştirilen telemetri ve kontrol sistemi. Gerçek zamanlı veri izleme sağlar.",
   },
   {
-    id: "fittrack-pro",
     category: "Mobil",
     name: "FitTrack Pro",
     description: "Kişisel fitness ve beslenme takip uygulaması",
@@ -51,10 +43,8 @@ export const projects = [
     icon: "📱",
     stats: "5.2K indirme",
     date: "1 hafta önce",
-    longDescription: "Fitness hedeflerinizi takip etmek için mobil uygulama. Egzersiz ve beslenme bilgilerini kaydedebilirsiniz.",
   },
   {
-    id: "ecommerce-platform",
     category: "Web",
     name: "E-Commerce Platform",
     description: "Modern e-ticaret altyapısı ve yönetim paneli",
@@ -63,10 +53,8 @@ export const projects = [
     icon: "🛒",
     stats: "12K satış",
     date: "2 ay önce",
-    longDescription: "Tam özellikli e-ticaret platformu. Ürün yönetimi, sipariş takibi ve ödeme işlemleri.",
   },
   {
-    id: "pixel-quest",
     category: "Oyun",
     name: "Pixel Quest",
     description: "Retro tarzı platform macera oyunu",
@@ -75,55 +63,6 @@ export const projects = [
     icon: "👾",
     stats: "890 indirme",
     date: "5 gün önce",
-    longDescription: "Klasik platform oyunu tarzında bir macera oyunu. Dünyanın çeşitli seviyelerini geçin.",
-  },
-  {
-    id: "ai-translator",
-    category: "AI",
-    name: "AI Çevirmen",
-    description: "Yapay zeka destekli gerçek zamanlı çevirmen",
-    stack: "Python · TensorFlow · React",
-    image: "https://images.unsplash.com/photo-1677442136019-21780ecad995?w=800&q=80",
-    icon: "🌐",
-    stats: "3.1K kullanıcı",
-    date: "3 hafta önce",
-    longDescription: "Yapay zeka kullanarak 50+ dilde gerçek zamanlı çeviri yapan platform.",
-  },
-  {
-    id: "mobile-banking",
-    category: "Mobil",
-    name: "Mobile Banking App",
-    description: "Güvenli mobil bankacılık uygulaması",
-    stack: "Flutter · Firebase · Dart",
-    image: "https://images.unsplash.com/photo-1526506118085-60ce8714f8c5?w=800&q=80",
-    icon: "🏦",
-    stats: "8.7K kullanıcı",
-    date: "2 ay önce",
-    longDescription: "Güvenli ve kullanıcı dostu mobil bankacılık uygulaması. Transferler, ödeme ve daha fazlası.",
-  },
-  {
-    id: "fantasy-realm",
-    category: "Oyun",
-    name: "Fantasy Realm",
-    description: "Çok oyunculu RPG oyunu",
-    stack: "Unreal Engine · C++",
-    image: "https://images.unsplash.com/photo-1538481199705-c710c4e965fc?w=800&q=80",
-    icon: "⚔️",
-    stats: "15K oyuncu",
-    date: "1 ay önce",
-    longDescription: "Fantastik bir dünyada çok oyunculu RPG deneyimi. Diğer oyuncularla birlikte maceraya çıkın.",
-  },
-  {
-    id: "analytics-pro",
-    category: "Web",
-    name: "Analytics Pro",
-    description: "Gelişmiş veri analitik ve raporlama aracı",
-    stack: "Next.js · PostgreSQL · D3.js",
-    image: "https://images.unsplash.com/photo-1551288049-bebda4e38f71?w=800&q=80",
-    icon: "📈",
-    stats: "2.3K şirket",
-    date: "3 hafta önce",
-    longDescription: "İşletmeniz için kapsamlı veri analitik ve raporlama çözümü.",
   },
 ];
 
@@ -212,18 +151,18 @@ export default function Projects() {
 
                   {/* Hover Buttons - Appear on hover */}
                   <div className="flex gap-2 opacity-0 transition-all duration-300 translate-y-4 group-hover:opacity-100 group-hover:translate-y-0">
-                    <Link
-                      href={`/projeler/kategori/${project.category.toLowerCase()}`}
+                    <a
+                      href="#"
                       className="flex-1 rounded-xl border border-white/20 bg-white/10 py-2.5 text-center text-[12px] font-semibold text-white backdrop-blur-md transition-all duration-200 hover:bg-white/20 hover:border-white/30"
                     >
                       Kategoriyi Gör
-                    </Link>
-                    <Link
-                      href={`/projeler/${project.id}`}
+                    </a>
+                    <a
+                      href="#"
                       className="flex-1 rounded-xl border border-pink-500/50 bg-pink-500/20 py-2.5 text-center text-[12px] font-semibold text-white backdrop-blur-md transition-all duration-200 hover:bg-pink-500/30 hover:border-pink-500/70"
                     >
                       Detayları Gör
-                    </Link>
+                    </a>
                   </div>
                 </div>
 

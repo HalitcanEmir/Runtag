@@ -1,31 +1,6 @@
-"use client";
-
-import { useTheme } from "@/context/ThemeContext";
-
 export default function Footer() {
-  const { announcements } = useTheme();
-
   return (
     <footer className="border-t border-white/10 bg-black/40 text-slate-400 backdrop-blur-xl">
-      {/* Duyurular Bölümü */}
-      {announcements.length > 0 && (
-        <div className="border-b border-white/10 bg-gradient-to-r from-slate-900/20 to-slate-800/20 px-4 py-4 sm:px-6 lg:px-8">
-          <div className="mx-auto max-w-6xl">
-            <h3 className="mb-3 text-sm font-semibold text-slate-300">📢 Duyurularımız</h3>
-            <div className="flex flex-wrap gap-2">
-              {announcements.map((announcement, index) => (
-                <div
-                  key={index}
-                  className="inline-flex items-center gap-2 rounded-full bg-white/5 px-3 py-1.5 text-[13px] text-slate-300 border border-white/10 hover:bg-white/10 transition-colors"
-                >
-                  <span>{announcement}</span>
-                </div>
-              ))}
-            </div>
-          </div>
-        </div>
-      )}
-
       <div className="mx-auto flex max-w-6xl flex-col gap-6 px-4 py-8 text-sm sm:px-6 sm:py-10 lg:flex-row lg:items-center lg:justify-between lg:px-8">
         <div className="flex items-center gap-3">
           <div className="relative flex h-9 w-9 items-center justify-center overflow-hidden rounded-2xl border border-white/20 bg-gradient-to-br from-slate-900/80 via-slate-800/60 to-slate-900/90 shadow-[0_18px_60px_rgba(0,0,0,0.85)]">

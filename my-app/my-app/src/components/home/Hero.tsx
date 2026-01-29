@@ -94,7 +94,7 @@ export default function Hero() {
               transition={{ delay: 0.2, duration: 0.6 }}
               className="text-3xl font-bold tracking-tight text-white drop-shadow-[0_2px_10px_rgba(0,0,0,0.3)] sm:text-4xl lg:text-5xl"
             >
-              Runteg Tech Studio
+              Runtagg Tech Studio
             </motion.h1>
 
             {/* Subtitle with animation */}
@@ -125,8 +125,15 @@ export default function Hero() {
               className="flex flex-wrap items-center justify-center gap-4 pt-2"
             >
               <a
+                href="#join"
+                className="group relative overflow-hidden rounded-full bg-gradient-to-r from-pink-500 to-pink-600 px-6 py-2.5 text-sm font-semibold text-white shadow-[0_4px_24px_rgba(236,72,153,0.5)] transition-all duration-300 hover:shadow-[0_6px_30px_rgba(236,72,153,0.6)] sm:px-7 sm:py-3"
+              >
+                <span className="relative z-10">Başlayalım</span>
+                <span className="absolute inset-0 bg-gradient-to-r from-pink-400 to-pink-500 opacity-0 transition-opacity duration-300 group-hover:opacity-100" />
+              </a>
+              <a
                 href="#projects"
-                className="group flex items-center gap-2 rounded-full border border-white/20 bg-white/5 px-5 py-2.5 text-sm font-medium text-white/90 backdrop-blur-sm transition-all duration-300 hover:border-white/30 hover:bg-white/10 hover:text-white sm:px-6 sm:py-3"
+                className="group flex items-center gap-2 rounded-full border border-white/20 bg-white/[0.05] px-5 py-2.5 text-sm font-medium text-white/90 backdrop-blur-sm transition-all duration-300 hover:border-white/30 hover:bg-white/[0.1] hover:text-white sm:px-6 sm:py-3"
               >
                 Projelerimiz
                 <span className="transition-transform duration-300 group-hover:translate-x-1">→</span>

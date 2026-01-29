@@ -1,7 +1,6 @@
 import type { Metadata } from "next";
 import { Space_Grotesk, Inter } from "next/font/google";
 import "./globals.css";
-import { Providers } from "./Providers";
 
 const spaceGrotesk = Space_Grotesk({
   subsets: ["latin"],
@@ -26,11 +25,9 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body
-        className={`${spaceGrotesk.variable} ${inter.variable} bg-app-gradient text-slate-100 antialiased transition-colors duration-300`}
+        className={`${spaceGrotesk.variable} ${inter.variable} bg-app-gradient text-slate-100 antialiased`}
       >
-        <Providers>
-          {children}
-        </Providers>
+        {children}
       </body>
     </html>
   );
