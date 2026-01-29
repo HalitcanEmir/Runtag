@@ -264,19 +264,55 @@ export default function Crews() {
                     transition={{ duration: 0.5, delay: colIndex * 0.1 }}
                     className="group/column flex flex-col"
                   >
-                    {/* Column Header */}
-                    <div className="mb-5 flex items-center justify-between">
-                      <div className="flex items-center gap-3">
-                        <div className={`relative flex h-8 w-8 items-center justify-center rounded-lg bg-gradient-to-br ${column.gradient} shadow-lg`}>
-                          <span className="text-sm font-bold text-white">{colIndex + 1}</span>
-                          <div className={`absolute inset-0 rounded-lg ${column.bgGlow} blur-md opacity-60`} />
+                    {/* Column Header - Premium Design */}
+                    <div className="mb-4">
+                      <div className={`relative overflow-hidden rounded-2xl border ${
+                        column.color === "red" ? "border-red-500/20 bg-red-500/5" :
+                        column.color === "yellow" ? "border-yellow-500/20 bg-yellow-500/5" :
+                        column.color === "blue" ? "border-blue-500/20 bg-blue-500/5" :
+                        "border-emerald-500/20 bg-emerald-500/5"
+                      } px-4 py-3`}>
+                        {/* Subtle glow */}
+                        <div className={`pointer-events-none absolute -right-4 -top-4 h-16 w-16 rounded-full ${column.bgGlow} blur-2xl opacity-40`} />
+                        
+                        <div className="relative flex items-center justify-between">
+                          <div className="flex items-center gap-3">
+                            {/* Icon */}
+                            <div className={`flex h-9 w-9 items-center justify-center rounded-xl bg-gradient-to-br ${column.gradient} shadow-lg`}>
+                              {colIndex === 0 && (
+                                <svg className="h-4 w-4 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9.663 17h4.673M12 3v1m6.364 1.636l-.707.707M21 12h-1M4 12H3m3.343-5.657l-.707-.707m2.828 9.9a5 5 0 117.072 0l-.548.547A3.374 3.374 0 0014 18.469V19a2 2 0 11-4 0v-.531c0-.895-.356-1.754-.988-2.386l-.548-.547z" />
+                                </svg>
+                              )}
+                              {colIndex === 1 && (
+                                <svg className="h-4 w-4 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M10 20l4-16m4 4l4 4-4 4M6 16l-4-4 4-4" />
+                                </svg>
+                              )}
+                              {colIndex === 2 && (
+                                <svg className="h-4 w-4 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z" />
+                                </svg>
+                              )}
+                              {colIndex === 3 && (
+                                <svg className="h-4 w-4 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M5 3v4M3 5h4M6 17v4m-2-2h4m5-16l2.286 6.857L21 12l-5.714 2.143L13 21l-2.286-6.857L5 12l5.714-2.143L13 3z" />
+                                </svg>
+                              )}
+                            </div>
+                            {/* Title & Count */}
+                            <div>
+                              <h4 className="text-sm font-semibold text-white">{column.title}</h4>
+                              <p className="text-[11px] text-white/40">{column.tasks.length} aktif görev</p>
+                            </div>
+                          </div>
+                          {/* More button */}
+                          <button className="flex h-7 w-7 items-center justify-center rounded-lg bg-white/5 text-white/40 transition-colors hover:bg-white/10 hover:text-white/60">
+                            <svg className="h-4 w-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                              <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M12 5v.01M12 12v.01M12 19v.01M12 6a1 1 0 110-2 1 1 0 010 2zm0 7a1 1 0 110-2 1 1 0 010 2zm0 7a1 1 0 110-2 1 1 0 010 2z" />
+                            </svg>
+                          </button>
                         </div>
-                        <span className="text-base font-semibold text-white">{column.title}</span>
-                      </div>
-                      <div className="flex items-center gap-2">
-                        <span className="rounded-md bg-white/5 px-2 py-1 text-[11px] font-medium text-white/50">
-                          {column.tasks.length}
-                        </span>
                       </div>
                     </div>
 
