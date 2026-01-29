@@ -2,69 +2,8 @@
 
 import { motion } from "framer-motion";
 import Image from "next/image";
-
-const projects = [
-  {
-    category: "Oyun",
-    name: "Nebula Drift",
-    description: "Arcade tarzı uzay oyunu prototipi",
-    stack: "Unity · C# · FMOD",
-    image: "https://images.unsplash.com/photo-1538481199705-c710c4e965fc?w=800&q=80",
-    icon: "🎮",
-    stats: "2.4K indirme",
-    date: "2 hafta önce",
-  },
-  {
-    category: "Web",
-    name: "Crewboard Dashboard",
-    description: "Ekip yönetim ve sprint takip paneli",
-    stack: "Next.js · PostgreSQL",
-    image: "https://images.unsplash.com/photo-1551288049-bebda4e38f71?w=800&q=80",
-    icon: "📊",
-    stats: "1.8K kullanıcı",
-    date: "1 ay önce",
-  },
-  {
-    category: "AI",
-    name: "Teknofest Control Hub",
-    description: "Yarışma telemetri ve kontrol merkezi",
-    stack: "Python · FastAPI · React",
-    image: "https://images.unsplash.com/photo-1677442136019-21780ecad995?w=800&q=80",
-    icon: "🤖",
-    stats: "Finalist",
-    date: "3 ay önce",
-  },
-  {
-    category: "Mobil",
-    name: "FitTrack Pro",
-    description: "Kişisel fitness ve beslenme takip uygulaması",
-    stack: "React Native · Firebase",
-    image: "https://images.unsplash.com/photo-1526506118085-60ce8714f8c5?w=800&q=80",
-    icon: "📱",
-    stats: "5.2K indirme",
-    date: "1 hafta önce",
-  },
-  {
-    category: "Web",
-    name: "E-Commerce Platform",
-    description: "Modern e-ticaret altyapısı ve yönetim paneli",
-    stack: "Next.js · Stripe · Prisma",
-    image: "https://images.unsplash.com/photo-1556742049-0cfed4f6a45d?w=800&q=80",
-    icon: "🛒",
-    stats: "12K satış",
-    date: "2 ay önce",
-  },
-  {
-    category: "Oyun",
-    name: "Pixel Quest",
-    description: "Retro tarzı platform macera oyunu",
-    stack: "Godot · GDScript",
-    image: "https://images.unsplash.com/photo-1550745165-9bc0b252726f?w=800&q=80",
-    icon: "👾",
-    stats: "890 indirme",
-    date: "5 gün önce",
-  },
-];
+import Link from "next/link";
+import { projects } from "@/data/projects";
 
 export default function Projects() {
   return (
@@ -142,7 +81,7 @@ export default function Projects() {
                       {project.name}
                     </h3>
                     <p className="mt-1 line-clamp-2 text-[13px] text-white/70">
-                      {project.description}
+                      {project.shortDescription}
                     </p>
                     <p className="mt-2 text-[11px] text-white/50">
                       {project.stack} • {project.date}
@@ -151,18 +90,18 @@ export default function Projects() {
 
                   {/* Hover Buttons - Appear on hover */}
                   <div className="flex gap-2 opacity-0 transition-all duration-300 translate-y-4 group-hover:opacity-100 group-hover:translate-y-0">
-                    <a
-                      href="#"
+                    <Link
+                      href={`/kategori/${project.categorySlug}`}
                       className="flex-1 rounded-xl border border-white/20 bg-white/10 py-2.5 text-center text-[12px] font-semibold text-white backdrop-blur-md transition-all duration-200 hover:bg-white/20 hover:border-white/30"
                     >
                       Kategoriyi Gör
-                    </a>
-                    <a
-                      href="#"
+                    </Link>
+                    <Link
+                      href={`/proje/${project.slug}`}
                       className="flex-1 rounded-xl border border-pink-500/50 bg-pink-500/20 py-2.5 text-center text-[12px] font-semibold text-white backdrop-blur-md transition-all duration-200 hover:bg-pink-500/30 hover:border-pink-500/70"
                     >
                       Detayları Gör
-                    </a>
+                    </Link>
                   </div>
                 </div>
 

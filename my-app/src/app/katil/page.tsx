@@ -1,11 +1,8 @@
 import Navbar from "@/components/home/Navbar";
-import Hero from "@/components/home/Hero";
-import Categories from "@/components/home/Categories";
-import Process from "@/components/home/Process";
-import Stats from "@/components/home/Stats";
+import JoinCTA from "@/components/home/JoinCTA";
 import Footer from "@/components/home/Footer";
 
-export default function Home() {
+export default function KatilPage() {
   return (
     <div className="relative min-h-screen overflow-x-hidden">
       {/* Background nebula effects */}
@@ -17,12 +14,8 @@ export default function Home() {
 
       <Navbar />
 
-      <Hero />
-
-      <main className="relative z-10 mx-auto flex max-w-6xl flex-col px-4 pb-12 pt-12 sm:px-6 lg:px-8 lg:pt-16">
-        <Categories />
-        <Process />
-        <Stats />
+      <main className="relative z-10 mx-auto flex max-w-6xl flex-col px-4 pb-12 pt-32 sm:px-6 lg:px-8">
+        <JoinCTA />
       </main>
 
       <Footer />

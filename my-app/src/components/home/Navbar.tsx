@@ -2,21 +2,23 @@
 
 import { useEffect, useState, useRef } from "react";
 import Image from "next/image";
+import Link from "next/link";
+import { usePathname } from "next/navigation";
 import { motion, AnimatePresence } from "framer-motion";
 
 const navItems = [
-  { label: "Ana Sayfa", href: "#top", id: "top" },
-  { label: "Yetenekler", href: "#capabilities", id: "capabilities" },
-  { label: "Projeler", href: "#projects", id: "projects" },
-  { label: "Ekip", href: "#crews", id: "crews" },
-  { label: "Katıl", href: "#join", id: "join" },
+  { label: "Ana Sayfa", href: "/", id: "home" },
+  { label: "Yetenekler", href: "/yetenekler", id: "yetenekler" },
+  { label: "Projeler", href: "/projeler", id: "projeler" },
+  { label: "Ekip", href: "/ekip", id: "ekip" },
+  { label: "Katıl", href: "/katil", id: "katil" },
 ];
 
 export default function Navbar() {
   const [scrolled, setScrolled] = useState(false);
   const [collapsed, setCollapsed] = useState(false);
   const [menuOpen, setMenuOpen] = useState(false);
-  const [activeSection, setActiveSection] = useState("top");
+  const pathname = usePathname();
   const lastScrollY = useRef(0);
 
   useEffect(() => {
@@ -42,22 +44,6 @@ export default function Navbar() {
       }
 
       lastScrollY.current = currentScrollY;
-
-      // Find active section based on scroll position
-      const sections = navItems.map((item) => item.id);
-      let currentSection = "top";
-
-      for (const sectionId of sections) {
-        const element = document.getElementById(sectionId);
-        if (element) {
-          const rect = element.getBoundingClientRect();
-          if (rect.top <= 150) {
-            currentSection = sectionId;
-          }
-        }
-      }
-
-      setActiveSection(currentSection);
     };
 
     handleScroll();
@@ -110,25 +96,25 @@ export default function Navbar() {
               className="flex w-full items-center justify-between"
             >
               {/* 1. Logo Section */}
-              <a
-                href="#top"
+              <Link
+                href="/"
                 className={`relative flex items-center gap-2 rounded-full px-2 py-1.5 transition-all duration-500 ${glassStyle}`}
               >
                 <div className="pointer-events-none absolute inset-0 rounded-full bg-gradient-to-b from-white/[0.1] to-transparent" />
                 <Image
                   src="/logo.png"
-                  alt="Runtagg Logo"
+                  alt="Runteg Logo"
                   width={36}
                   height={36}
                   className="relative h-9 w-9 object-contain"
                 />
                 <div className="relative hidden flex-col pr-1 sm:flex">
                   <span className="text-sm font-semibold tracking-tight text-white">
-                    Runtagg
+                    Runteg
                   </span>
                   <span className="text-[10px] text-white/50">Tech Studio</span>
                 </div>
-              </a>
+              </Link>
 
               {/* 2. Center Navigation Section */}
               <nav
@@ -137,9 +123,9 @@ export default function Navbar() {
                 <div className="pointer-events-none absolute inset-0 rounded-full bg-gradient-to-b from-white/[0.1] to-transparent" />
                 <div className="relative flex items-center gap-1">
                   {navItems.map((item) => {
-                    const isActive = activeSection === item.id;
+                    const isActive = pathname === item.href;
                     return (
-                      <a
+                      <Link
                         key={item.href}
                         href={item.href}
                         className={`group relative rounded-full px-4 py-2 text-[13px] font-medium transition-all duration-300 ${
@@ -156,7 +142,7 @@ export default function Navbar() {
                               : "bg-white/[0.08] opacity-0 group-hover:opacity-100"
                           }`}
                         />
-                      </a>
+                      </Link>
                     );
                   })}
                 </div>
@@ -167,19 +153,13 @@ export default function Navbar() {
                 className={`relative flex items-center gap-2 rounded-full px-2 py-1.5 transition-all duration-500 ${glassStyle}`}
               >
                 <div className="pointer-events-none absolute inset-0 rounded-full bg-gradient-to-b from-white/[0.1] to-transparent" />
-                <a
-                  href="#join"
-                  className="relative hidden rounded-full px-4 py-2 text-[13px] font-medium text-white/80 transition-colors hover:text-white sm:inline-flex"
-                >
-                  Giriş Yap
-                </a>
-                <a
-                  href="#join"
+                <Link
+                  href="/katil"
                   className="group relative overflow-hidden rounded-full bg-gradient-to-r from-pink-500 to-pink-600 px-5 py-2 text-[13px] font-semibold text-white shadow-[0_2px_12px_rgba(236,72,153,0.35)] transition-all duration-300 hover:shadow-[0_4px_20px_rgba(236,72,153,0.5)]"
                 >
-                  <span className="relative z-10">Başlayın</span>
+                  <span className="relative z-10">Bize Katılın</span>
                   <span className="absolute inset-0 bg-gradient-to-r from-pink-400 to-pink-500 opacity-0 transition-opacity duration-300 group-hover:opacity-100" />
-                </a>
+                </Link>
               </div>
             </motion.div>
           )}

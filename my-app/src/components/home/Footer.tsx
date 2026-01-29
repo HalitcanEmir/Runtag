@@ -61,14 +61,14 @@ export default function Footer() {
                 <div className="absolute -inset-1 rounded-xl bg-gradient-to-r from-pink-500/20 to-purple-500/20 blur-sm" />
                 <Image
                   src="/logo.png"
-                  alt="Runtagg Logo"
+                  alt="Runteg Logo"
                   width={40}
                   height={40}
                   className="relative h-10 w-10 object-contain"
                 />
               </div>
               <div>
-                <h3 className="text-lg font-bold text-white">Runtagg</h3>
+                <h3 className="text-lg font-bold text-white">Runteg</h3>
                 <p className="text-xs text-white/40">Tech Studio</p>
               </div>
             </a>
@@ -121,10 +121,10 @@ export default function Footer() {
             </h4>
             <div className="space-y-3">
               <a
-                href="mailto:hello@runtagg.com"
+                href="mailto:hello@runteg.com"
                 className="block text-sm text-white/40 transition-colors duration-200 hover:text-white/80"
               >
-                hello@runtagg.com
+                hello@runteg.com
               </a>
               <a
                 href="#join"
@@ -141,7 +141,7 @@ export default function Footer() {
         {/* Bottom Bar */}
         <div className="mt-12 flex flex-col items-center justify-between gap-4 border-t border-white/[0.04] pt-8 sm:flex-row">
           <p className="text-xs text-white/25">
-            © 2026 Runtagg Tech Studio. Tüm hakları saklıdır.
+            © 2026 Runteg Tech Studio. Tüm hakları saklıdır.
           </p>
           <div className="flex items-center gap-6 text-xs text-white/25">
             <a href="#" className="transition-colors duration-200 hover:text-white/50">
