@@ -5,7 +5,12 @@ import Image from "next/image";
 import Link from "next/link";
 import { projects } from "@/data/projects";
 
-export default function Projects() {
+type ProjectsProps = {
+  limit?: number;
+};
+
+export default function Projects({ limit }: ProjectsProps) {
+  const displayedProjects = limit ? projects.slice(0, limit) : projects;
   return (
     <section id="projects" className="relative py-20">
       {/* Background glow */}
@@ -30,7 +35,7 @@ export default function Projects() {
       {/* Project Grid */}
       <div className="mx-auto mt-12 max-w-7xl px-4 sm:px-6 lg:px-8">
         <div className="grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
-          {projects.map((project, index) => (
+          {displayedProjects.map((project, index) => (
             <motion.article
               key={project.name}
               initial={{ opacity: 0, y: 20 }}

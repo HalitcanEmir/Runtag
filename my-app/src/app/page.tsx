@@ -1,6 +1,9 @@
 import Navbar from "@/components/home/Navbar";
 import Hero from "@/components/home/Hero";
+import Capabilities from "@/components/home/Capabilities";
 import Categories from "@/components/home/Categories";
+import Projects from "@/components/home/Projects";
+import Crews from "@/components/home/Crews";
 import Process from "@/components/home/Process";
 import Stats from "@/components/home/Stats";
 import Footer from "@/components/home/Footer";
@@ -20,7 +23,10 @@ export default function Home() {
       <Hero />
 
       <main className="relative z-10 mx-auto flex max-w-6xl flex-col px-4 pb-12 pt-12 sm:px-6 lg:px-8 lg:pt-16">
+        <Capabilities />
         <Categories />
+        <Projects limit={6} />
+        <Crews />
         <Process />
         <Stats />
       </main>
