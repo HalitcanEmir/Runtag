@@ -58,13 +58,13 @@ export default function Hero() {
   return (
     <section
       id="top"
-      className="relative flex min-h-screen w-full items-center justify-center pt-24 pb-24 sm:pb-28"
+      className="relative flex h-screen w-full items-center justify-center"
     >
       {/* Background video */}
-      <div className="absolute inset-0 -z-20 overflow-hidden">
+      <div className="fixed inset-0 z-[1] overflow-hidden">
         <video
           className="h-full w-full object-cover"
-          src="/hero-bg.mov"
+          src="/sitevideo.mp4"
           autoPlay
           muted
           loop
