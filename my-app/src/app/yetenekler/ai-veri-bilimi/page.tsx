@@ -453,30 +453,6 @@ export default function AIVeriPage() {
       </main>
 
       <Footer />
-
-      <style jsx>{`
-        @keyframes dataflow {
-          0% {
-            transform: translate(0, 0) scale(1);
-            opacity: 0;
-          }
-          10% {
-            opacity: 1;
-          }
-          90% {
-            opacity: 1;
-          }
-          100% {
-            transform: translate(100px, 100px) scale(0.5);
-            opacity: 0;
-          }
-        }
-
-        @keyframes loading {
-          0% { transform: translateX(-100%); }
-          100% { transform: translateX(400%); }
-        }
-      `}</style>
     </div>
   );
 }

@@ -519,22 +519,6 @@ export default function IoTRobotikaPage() {
       </main>
 
       <Footer />
-
-      <style jsx>{`
-        @keyframes robotfloat {
-          0%, 100% { transform: translateY(0px) translateX(0px) rotate(0deg); }
-          25% { transform: translateY(-20px) translateX(10px) rotate(90deg); }
-          50% { transform: translateY(-40px) translateX(0px) rotate(180deg); }
-          75% { transform: translateY(-20px) translateX(-10px) rotate(270deg); }
-        }
-
-        @keyframes energyflow {
-          0% { transform: translateX(-100%); opacity: 0; }
-          10% { opacity: 1; }
-          90% { opacity: 1; }
-          100% { transform: translateX(100%); opacity: 0; }
-        }
-      `}</style>
     </div>
   );
 }

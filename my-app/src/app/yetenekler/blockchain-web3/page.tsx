@@ -508,15 +508,6 @@ export default function BlockchainWeb3Page() {
       </main>
 
       <Footer />
-
-      <style jsx>{`
-        @keyframes floattoken {
-          0%, 100% { transform: translateY(0px) rotateZ(0deg) scale(1); }
-          25% { transform: translateY(-20px) rotateZ(90deg) scale(1.1); }
-          50% { transform: translateY(-40px) rotateZ(180deg) scale(1); }
-          75% { transform: translateY(-20px) rotateZ(270deg) scale(1.1); }
-        }
-      `}</style>
     </div>
   );
 }

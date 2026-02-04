@@ -534,49 +534,6 @@ export default function SiberGuvenlikPage() {
       </main>
 
       <Footer />
-
-      <style jsx>{`
-        @keyframes scanline {
-          0% { opacity: 0.3; }
-          50% { opacity: 0.8; }
-          100% { opacity: 0.3; }
-        }
-
-        @keyframes coderain {
-          0% {
-            transform: translateY(-100%);
-            opacity: 0;
-          }
-          10% {
-            opacity: 0.8;
-          }
-          90% {
-            opacity: 0.8;
-          }
-          100% {
-            transform: translateY(100vh);
-            opacity: 0;
-          }
-        }
-
-        @keyframes floatlock {
-          0%, 100% { transform: translateY(0px) rotateZ(0deg); }
-          25% { transform: translateY(-15px) rotateZ(5deg); }
-          50% { transform: translateY(-30px) rotateZ(-5deg); }
-          75% { transform: translateY(-15px) rotateZ(5deg); }
-        }
-
-        @keyframes typewriter {
-          0% { 
-            opacity: 0;
-            width: 0;
-          }
-          100% { 
-            opacity: 1;
-            width: 100%;
-          }
-        }
-      `}</style>
     </div>
   );
 }
