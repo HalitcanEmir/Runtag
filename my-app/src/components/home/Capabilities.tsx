@@ -116,29 +116,7 @@ const cards = [
 
 export default function Capabilities() {
   return (
-    <section id="capabilities" className="relative py-20 overflow-hidden">
-      {/* Animated Background */}
-      <div className="absolute inset-0 z-0">
-        {/* Multi-color gradient background */}
-        <div className="absolute inset-0 bg-gradient-to-tr from-pink-950 via-transparent to-cyan-950 opacity-30" />
-
-        {/* Animated gradient orbs */}
-        <div
-          className="absolute bottom-0 right-1/4 h-96 w-96 rounded-full bg-gradient-to-br from-blue-500 to-cyan-500 opacity-20 blur-3xl animate-blob"
-          style={{ animationDelay: "2s" }}
-        />
-
-        {/* Subtle grid pattern */}
-        <svg className="absolute inset-0 h-full w-full opacity-10">
-          <defs>
-            <pattern id="grid" width="40" height="40" patternUnits="userSpaceOnUse">
-              <path d="M 40 0 L 0 0 0 40" fill="none" stroke="white" strokeWidth="0.5" />
-            </pattern>
-          </defs>
-          <rect width="100%" height="100%" fill="url(#grid)" />
-        </svg>
-      </div>
-
+    <section id="capabilities" className="relative py-20">
       {/* Section Header */}
       <div className="relative z-10">
         <div className="mx-auto max-w-6xl space-y-3 px-4 text-center sm:px-6 lg:px-8">
