@@ -60,8 +60,8 @@ export default function Hero() {
       id="top"
       className="relative z-[5] flex h-screen w-full items-center justify-center"
     >
-      {/* Background video - fixed to show behind navbar */}
-      <div className="fixed inset-0 z-0 h-screen w-full overflow-hidden">
+      {/* Background video - fixed to integrate with navbar */}
+      <div className="fixed inset-0 z-0">
         <video
           className="h-full w-full object-cover"
           src="/sitevideo.mp4"

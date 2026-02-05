@@ -16,30 +16,47 @@ export default function Home() {
 
       <Hero />
 
-      <div className="relative z-10 overflow-hidden">
-        {/* Cosmic Background for main content */}
-        <div className="pointer-events-none absolute inset-0 z-0">
-          {/* Deep space gradient */}
-          <div className="absolute inset-0 bg-gradient-to-b from-[#0a0015] via-[#050010] to-[#020008]" />
+      {/* Main Content with Cinematic Background */}
+      <div className="relative z-10 bg-[#05030a]">
+        {/* Cinematic Background - starts after hero */}
+        <div className="pointer-events-none absolute inset-0 z-0 overflow-hidden">
+          {/* Scene A: Cosmic Space */}
+          <div className="scene scene-space">
+            <div className="stars-subtle" />
+            <div className="cosmic-glow-soft" />
+          </div>
           
-          {/* Star fields */}
-          <div className="star-field opacity-60" />
-          <div className="star-field-2 opacity-40" />
+          {/* Scene B: Atmosphere Entry */}
+          <div className="scene scene-atmosphere">
+            <div className="horizon-glow" />
+            <div className="clouds-subtle" />
+          </div>
           
-          {/* Cosmic orbs / Nebulas */}
-          <div className="cosmic-orb cosmic-orb--purple absolute -left-20 top-[10%] h-[500px] w-[500px] opacity-50" style={{ animationDelay: '0s' }} />
-          <div className="cosmic-orb cosmic-orb--pink absolute -right-32 top-[30%] h-[400px] w-[400px] opacity-40" style={{ animationDelay: '5s' }} />
-          <div className="cosmic-orb cosmic-orb--cyan absolute left-[30%] top-[50%] h-[300px] w-[300px] opacity-30" style={{ animationDelay: '10s' }} />
-          <div className="cosmic-orb cosmic-orb--purple absolute right-[10%] top-[70%] h-[350px] w-[350px] opacity-35" style={{ animationDelay: '3s' }} />
-          <div className="cosmic-orb cosmic-orb--pink absolute -left-10 top-[85%] h-[400px] w-[400px] opacity-30" style={{ animationDelay: '7s' }} />
+          {/* Scene C: Sky to Earth */}
+          <div className="scene scene-sky-earth">
+            <div className="silhouette-mountains">
+              <div className="mountain-layer-back" />
+              <div className="mountain-layer-mid" />
+              <div className="mountain-layer-front" />
+            </div>
+          </div>
           
-          {/* Alien Planets */}
-          <div className="alien-planet absolute -right-16 top-[5%] h-32 w-32 opacity-50" />
-          <div className="alien-planet absolute -left-12 top-[45%] h-20 w-20 opacity-40" style={{ background: 'radial-gradient(circle at 30% 30%, rgba(56, 189, 248, 0.8), rgba(6, 95, 124, 0.9) 50%, rgba(2, 20, 30, 1) 100%)' }} />
-          <div className="alien-planet absolute right-[15%] top-[75%] h-16 w-16 opacity-35" style={{ background: 'radial-gradient(circle at 30% 30%, rgba(236, 72, 153, 0.7), rgba(157, 23, 77, 0.9) 50%, rgba(30, 5, 20, 1) 100%)' }} />
+          {/* Scene D: Water & Soil */}
+          <div className="scene scene-water-soil">
+            <div className="water-shimmer" />
+            <div className="water-reflection" />
+            <div className="soil-layer" />
+          </div>
           
-          {/* 3D Perspective Grid */}
-          <div className="perspective-grid" />
+          {/* Scene E: Underground */}
+          <div className="scene scene-underground">
+            <div className="root-hints" />
+            <div className="rock-layer" />
+            <div className="underground-veins" />
+          </div>
+          
+          {/* Vignette overlay */}
+          <div className="bg-vignette" />
         </div>
 
         <main className="relative z-10 mx-auto flex max-w-6xl flex-col px-4 pb-12 pt-12 sm:px-6 lg:px-8 lg:pt-16">
@@ -51,10 +68,11 @@ export default function Home() {
           <Stats />
         </main>
 
-        <div className="relative z-10">
-          <Footer />
-        </div>
+        <Footer />
       </div>
+      
+      {/* Grain texture - prevents banding */}
+      <div className="bg-grain" />
     </div>
   );
 }

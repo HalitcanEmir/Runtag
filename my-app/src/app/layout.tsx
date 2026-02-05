@@ -25,11 +25,9 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body
-        className={`${spaceGrotesk.variable} ${inter.variable} min-h-screen bg-app-gradient text-slate-100 antialiased`}
+        className={`${spaceGrotesk.variable} ${inter.variable} min-h-screen text-slate-100 antialiased`}
       >
-        <div className="pt-24 sm:pt-28 lg:pt-32">
-          {children}
-        </div>
+        {children}
       </body>
     </html>
   );

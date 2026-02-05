@@ -14,6 +14,7 @@
 
 html {
   scroll-behavior: smooth;
+  background: #020308;
 }
 
 html, body {
@@ -22,7 +23,7 @@ html, body {
 }
 
 body {
-  background: radial-gradient(circle at top left, #1f2937 0, #020308 50%, #020308 100%);
+  background: transparent;
   color: var(--foreground);
 }
 
@@ -300,6 +301,303 @@ body {
   75% { transform: translateY(-20px) rotateZ(270deg) scale(1.1); }
 }
 
+/* ============ CINEMATIC SCROLL BACKGROUND ============ */
+
+/* Grain/Noise texture overlay - prevents banding */
+.bg-grain {
+  position: fixed;
+  inset: 0;
+  z-index: 1;
+  pointer-events: none;
+  opacity: 0.03;
+  background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 200 200' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noise'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.85' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%' height='100%' filter='url(%23noise)'/%3E%3C/svg%3E");
+}
+
+/* Vignette overlay */
+.bg-vignette {
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+  background: radial-gradient(ellipse at center, transparent 40%, rgba(0,0,0,0.4) 100%);
+}
+
+/* Scene base styles */
+.scene {
+  position: absolute;
+  left: 0;
+  right: 0;
+  pointer-events: none;
+}
+
+/* ===== SCENE A: COSMIC SPACE ===== */
+.scene-space {
+  top: 0;
+  height: 120vh;
+  background: linear-gradient(180deg, 
+    #05030a 0%, 
+    #0a0814 30%,
+    #0d0a1a 60%,
+    #10102a 100%
+  );
+}
+
+/* Subtle star field for space */
+.stars-subtle {
+  position: absolute;
+  inset: 0;
+  background-image: 
+    radial-gradient(1px 1px at 10% 20%, rgba(255,255,255,0.4), transparent),
+    radial-gradient(1px 1px at 30% 15%, rgba(255,255,255,0.3), transparent),
+    radial-gradient(1.5px 1.5px at 50% 30%, rgba(255,255,255,0.5), transparent),
+    radial-gradient(1px 1px at 70% 10%, rgba(255,255,255,0.35), transparent),
+    radial-gradient(1px 1px at 85% 25%, rgba(255,255,255,0.3), transparent),
+    radial-gradient(1px 1px at 20% 40%, rgba(255,255,255,0.25), transparent),
+    radial-gradient(2px 2px at 60% 5%, rgba(255,255,255,0.6), transparent),
+    radial-gradient(1px 1px at 90% 35%, rgba(255,255,255,0.3), transparent);
+  opacity: 0.6;
+}
+
+/* Cosmic glow - very soft radial */
+.cosmic-glow-soft {
+  position: absolute;
+  top: 10%;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 80%;
+  height: 60%;
+  background: radial-gradient(ellipse at center, 
+    rgba(100, 80, 160, 0.08) 0%, 
+    rgba(60, 40, 100, 0.04) 40%,
+    transparent 70%
+  );
+}
+
+/* ===== SCENE B: ATMOSPHERE ENTRY ===== */
+.scene-atmosphere {
+  top: 100vh;
+  height: 100vh;
+  background: linear-gradient(180deg,
+    #10102a 0%,
+    #141835 20%,
+    #182040 40%,
+    #1a2550 60%,
+    #1c2a5a 80%,
+    #1e3060 100%
+  );
+}
+
+/* Horizon glow - earth curvature hint */
+.horizon-glow {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  height: 40%;
+  background: linear-gradient(180deg,
+    transparent 0%,
+    rgba(80, 100, 140, 0.1) 50%,
+    rgba(100, 130, 180, 0.15) 80%,
+    rgba(120, 150, 200, 0.1) 100%
+  );
+}
+
+/* Thin cloud layers */
+.clouds-subtle {
+  position: absolute;
+  bottom: 20%;
+  left: 0;
+  right: 0;
+  height: 30%;
+  background: 
+    linear-gradient(90deg, transparent 0%, rgba(150,160,180,0.03) 20%, rgba(150,160,180,0.05) 50%, rgba(150,160,180,0.03) 80%, transparent 100%),
+    linear-gradient(90deg, transparent 10%, rgba(140,150,170,0.04) 30%, rgba(140,150,170,0.06) 60%, rgba(140,150,170,0.03) 90%, transparent 100%);
+  background-size: 100% 50%, 100% 60%;
+  background-position: 0 0, 0 40%;
+}
+
+/* ===== SCENE C: SKY TO EARTH ===== */
+.scene-sky-earth {
+  top: 200vh;
+  height: 100vh;
+  background: linear-gradient(180deg,
+    #1e3060 0%,
+    #1a2850 15%,
+    #162040 30%,
+    #121a35 50%,
+    #0e1428 70%,
+    #0a1020 85%,
+    #080c18 100%
+  );
+}
+
+/* Mountain silhouettes - layered depth */
+.silhouette-mountains {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  height: 45%;
+}
+
+.mountain-layer-back {
+  position: absolute;
+  bottom: 0;
+  left: -5%;
+  right: -5%;
+  height: 70%;
+  background: linear-gradient(180deg, transparent 0%, rgba(15,20,35,0.6) 100%);
+  clip-path: polygon(0% 100%, 5% 60%, 15% 75%, 25% 45%, 35% 65%, 45% 35%, 55% 55%, 65% 30%, 75% 50%, 85% 40%, 95% 55%, 100% 100%);
+}
+
+.mountain-layer-mid {
+  position: absolute;
+  bottom: 0;
+  left: -3%;
+  right: -3%;
+  height: 55%;
+  background: linear-gradient(180deg, transparent 0%, rgba(12,16,28,0.8) 100%);
+  clip-path: polygon(0% 100%, 8% 55%, 20% 70%, 32% 40%, 45% 60%, 58% 35%, 70% 55%, 82% 45%, 92% 60%, 100% 100%);
+}
+
+.mountain-layer-front {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  height: 40%;
+  background: linear-gradient(180deg, rgba(8,12,24,0.9) 0%, #080c18 100%);
+  clip-path: polygon(0% 100%, 10% 50%, 25% 65%, 40% 45%, 55% 58%, 70% 40%, 85% 55%, 100% 45%, 100% 100%);
+}
+
+/* ===== SCENE D: WATER & SOIL ===== */
+.scene-water-soil {
+  top: 300vh;
+  height: 100vh;
+  background: linear-gradient(180deg,
+    #080c18 0%,
+    #0a1015 15%,
+    #0c1412 30%,
+    #0d1610 50%,
+    #0e1810 70%,
+    #101a12 85%,
+    #121c14 100%
+  );
+}
+
+/* Water shimmer effect - very subtle */
+.water-shimmer {
+  position: absolute;
+  top: 10%;
+  left: 0;
+  right: 0;
+  height: 35%;
+  background: linear-gradient(180deg,
+    rgba(40, 80, 100, 0.08) 0%,
+    rgba(50, 90, 110, 0.05) 50%,
+    transparent 100%
+  );
+}
+
+.water-reflection {
+  position: absolute;
+  top: 15%;
+  left: 10%;
+  right: 10%;
+  height: 20%;
+  background: linear-gradient(90deg,
+    transparent 0%,
+    rgba(80, 120, 140, 0.03) 25%,
+    rgba(100, 140, 160, 0.05) 50%,
+    rgba(80, 120, 140, 0.03) 75%,
+    transparent 100%
+  );
+}
+
+/* Soil texture gradient */
+.soil-layer {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  height: 60%;
+  background: linear-gradient(180deg,
+    rgba(30, 25, 20, 0.3) 0%,
+    rgba(40, 32, 25, 0.5) 30%,
+    rgba(50, 40, 30, 0.7) 60%,
+    rgba(45, 35, 28, 0.9) 100%
+  );
+}
+
+/* ===== SCENE E: UNDERGROUND ===== */
+.scene-underground {
+  top: 400vh;
+  min-height: 100vh;
+  background: linear-gradient(180deg,
+    #121c14 0%,
+    #141a16 10%,
+    #161815 25%,
+    #181614 40%,
+    #1a1512 55%,
+    #1c1410 70%,
+    #1e1310 85%,
+    #201210 100%
+  );
+}
+
+/* Rock layers */
+.rock-layer {
+  position: absolute;
+  top: 20%;
+  left: 0;
+  right: 0;
+  height: 50%;
+  background: 
+    linear-gradient(180deg, transparent 0%, rgba(60, 50, 45, 0.15) 30%, rgba(70, 58, 50, 0.2) 60%, rgba(60, 50, 45, 0.15) 100%),
+    linear-gradient(90deg, transparent 0%, rgba(55, 45, 40, 0.1) 50%, transparent 100%);
+}
+
+/* Underground veins - aquifer hint */
+.underground-veins {
+  position: absolute;
+  bottom: 10%;
+  left: 0;
+  right: 0;
+  height: 40%;
+  opacity: 0.4;
+  background: 
+    linear-gradient(135deg, transparent 45%, rgba(60, 90, 110, 0.08) 48%, rgba(60, 90, 110, 0.05) 52%, transparent 55%),
+    linear-gradient(45deg, transparent 40%, rgba(50, 80, 100, 0.06) 45%, rgba(50, 80, 100, 0.04) 50%, transparent 55%);
+  background-size: 300px 200px, 250px 180px;
+}
+
+/* Root hints - very subtle */
+.root-hints {
+  position: absolute;
+  top: 5%;
+  left: 0;
+  right: 0;
+  height: 30%;
+  opacity: 0.15;
+  background: 
+    linear-gradient(180deg, rgba(80, 60, 50, 0.3) 0%, transparent 100%),
+    linear-gradient(175deg, transparent 48%, rgba(70, 55, 45, 0.15) 49%, rgba(70, 55, 45, 0.1) 51%, transparent 52%),
+    linear-gradient(185deg, transparent 46%, rgba(65, 50, 40, 0.12) 48%, rgba(65, 50, 40, 0.08) 52%, transparent 54%);
+}
+
+/* ===== SOFT SCRIM FOR READABILITY ===== */
+.content-scrim {
+  position: relative;
+}
+
+.content-scrim::before {
+  content: '';
+  position: absolute;
+  inset: -20px -40px;
+  background: radial-gradient(ellipse at center, rgba(10, 10, 15, 0.3) 0%, transparent 70%);
+  pointer-events: none;
+  z-index: -1;
+}
+
 /* ============ COSMIC SPACE BACKGROUND ============ */
 
 /* Stars twinkling */
@@ -431,4 +729,282 @@ body {
     inset 10px 10px 40px rgba(236, 72, 153, 0.3),
     0 0 80px 20px rgba(139, 92, 246, 0.3);
   animation: cosmic-glow 8s ease-in-out infinite;
+}
+
+/* ============ REALISTIC SPACE ELEMENTS ============ */
+
+/* Sun with corona */
+.space-sun {
+  position: absolute;
+  border-radius: 50%;
+  background: radial-gradient(circle at 50% 50%,
+    #fff7e6 0%,
+    #ffdd80 20%,
+    #ffb347 40%,
+    #ff8c00 60%,
+    #ff4500 80%,
+    transparent 100%);
+  box-shadow: 
+    0 0 60px 30px rgba(255, 200, 100, 0.5),
+    0 0 120px 60px rgba(255, 150, 50, 0.3),
+    0 0 200px 100px rgba(255, 100, 0, 0.2),
+    inset 0 0 30px 10px rgba(255, 255, 200, 0.8);
+  animation: sun-pulse 4s ease-in-out infinite;
+}
+
+@keyframes sun-pulse {
+  0%, 100% { 
+    transform: scale(1);
+    box-shadow: 
+      0 0 60px 30px rgba(255, 200, 100, 0.5),
+      0 0 120px 60px rgba(255, 150, 50, 0.3),
+      0 0 200px 100px rgba(255, 100, 0, 0.2);
+  }
+  50% { 
+    transform: scale(1.05);
+    box-shadow: 
+      0 0 80px 40px rgba(255, 200, 100, 0.6),
+      0 0 150px 80px rgba(255, 150, 50, 0.4),
+      0 0 250px 120px rgba(255, 100, 0, 0.25);
+  }
+}
+
+/* Gentle floating animation - no back and forth */
+@keyframes gentle-float {
+  0%, 100% { transform: translateY(0); }
+  50% { transform: translateY(-20px); }
+}
+
+@keyframes gentle-drift {
+  0%, 100% { transform: translate(0, 0); }
+  50% { transform: translate(15px, -10px); }
+}
+
+/* Simple glowing planet */
+.planet-glow {
+  position: absolute;
+  border-radius: 50%;
+}
+
+.planet-glow::before {
+  content: '';
+  position: absolute;
+  inset: -10%;
+  border-radius: 50%;
+  background: inherit;
+  filter: blur(15px);
+  opacity: 0.5;
+}
+
+.planet-float {
+  animation: gentle-float ease-in-out infinite;
+}
+
+.planet-drift {
+  animation: gentle-drift ease-in-out infinite;
+}
+
+.planet-glow--blue {
+  background: radial-gradient(circle at 35% 35%, 
+    #a8d8ff 0%, 
+    #4a90c2 30%, 
+    #1e5a8a 60%, 
+    #0d2d4a 100%);
+  box-shadow: 
+    inset -8px -8px 20px rgba(0,0,0,0.5),
+    inset 3px 3px 10px rgba(255,255,255,0.3),
+    0 0 30px rgba(74, 144, 194, 0.4);
+}
+
+.planet-glow--orange {
+  background: radial-gradient(circle at 35% 35%, 
+    #ffcc99 0%, 
+    #e07020 30%, 
+    #a04010 60%, 
+    #401808 100%);
+  box-shadow: 
+    inset -8px -8px 20px rgba(0,0,0,0.5),
+    inset 3px 3px 10px rgba(255,200,150,0.3),
+    0 0 25px rgba(224, 112, 32, 0.4);
+}
+
+.planet-glow--purple {
+  background: radial-gradient(circle at 35% 35%, 
+    #d8b4fe 0%, 
+    #9333ea 30%, 
+    #581c87 60%, 
+    #1e0533 100%);
+  box-shadow: 
+    inset -8px -8px 20px rgba(0,0,0,0.5),
+    inset 3px 3px 10px rgba(216,180,254,0.3),
+    0 0 30px rgba(147, 51, 234, 0.4);
+}
+
+.planet-glow--cyan {
+  background: radial-gradient(circle at 35% 35%, 
+    #a5f3fc 0%, 
+    #06b6d4 30%, 
+    #0e7490 60%, 
+    #042f3d 100%);
+  box-shadow: 
+    inset -8px -8px 20px rgba(0,0,0,0.5),
+    inset 3px 3px 10px rgba(165,243,252,0.3),
+    0 0 25px rgba(6, 182, 212, 0.4);
+}
+
+.planet-glow--pink {
+  background: radial-gradient(circle at 35% 35%, 
+    #fda4af 0%, 
+    #e11d48 30%, 
+    #9f1239 60%, 
+    #4c0519 100%);
+  box-shadow: 
+    inset -8px -8px 20px rgba(0,0,0,0.5),
+    inset 3px 3px 10px rgba(253,164,175,0.3),
+    0 0 25px rgba(225, 29, 72, 0.4);
+}
+
+/* Realistic Meteor / Shooting Star */
+.meteor-shower {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  overflow: hidden;
+}
+
+.meteor-star {
+  position: absolute;
+  height: 2px;
+  background: linear-gradient(90deg, 
+    rgba(255,255,255,0) 0%,
+    rgba(255,255,255,0.2) 20%,
+    rgba(200,220,255,0.6) 50%,
+    rgba(255,255,255,1) 100%);
+  border-radius: 0 50% 50% 0;
+  filter: drop-shadow(0 0 6px rgba(200,220,255,0.8));
+  transform: rotate(-35deg);
+  opacity: 0;
+}
+
+.meteor-star::before {
+  content: '';
+  position: absolute;
+  right: 0;
+  top: 50%;
+  transform: translateY(-50%);
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  background: radial-gradient(circle, white 0%, rgba(200,220,255,0.8) 50%, transparent 100%);
+  box-shadow: 
+    0 0 10px 3px rgba(255,255,255,0.9),
+    0 0 20px 6px rgba(200,220,255,0.6),
+    0 0 30px 10px rgba(100,150,255,0.3);
+}
+
+/* Meteor appears only briefly in a long cycle */
+@keyframes meteor-fly-rare {
+  0%, 95% {
+    transform: rotate(-35deg) translateX(0);
+    opacity: 0;
+  }
+  96% {
+    opacity: 1;
+  }
+  99% {
+    opacity: 1;
+  }
+  100% {
+    transform: rotate(-35deg) translateX(-1200px);
+    opacity: 0;
+  }
+}
+
+/* Rare meteors - appear every 40-50 seconds */
+.meteor-star-rare-1 {
+  top: 18%;
+  right: -200px;
+  width: 220px;
+  animation: meteor-fly-rare 45s ease-out infinite;
+  animation-delay: 10s;
+}
+
+.meteor-star-rare-2 {
+  top: 55%;
+  right: -180px;
+  width: 180px;
+  animation: meteor-fly-rare 50s ease-out infinite;
+  animation-delay: 35s;
+}
+
+/* Distant Galaxy */
+.distant-galaxy {
+  position: absolute;
+  border-radius: 50%;
+  background: radial-gradient(ellipse at center,
+    rgba(255, 255, 255, 0.3) 0%,
+    rgba(200, 180, 255, 0.2) 20%,
+    rgba(150, 100, 200, 0.1) 40%,
+    transparent 70%);
+  filter: blur(2px);
+  transform: rotate(30deg);
+  animation: galaxy-rotate 120s linear infinite;
+}
+
+@keyframes galaxy-rotate {
+  from { transform: rotate(0deg); }
+  to { transform: rotate(360deg); }
+}
+
+/* More detailed star layers */
+.star-field-3 {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  background-image: 
+    radial-gradient(1px 1px at 100px 50px, #fff, transparent),
+    radial-gradient(1px 1px at 200px 150px, #fff, transparent),
+    radial-gradient(2px 2px at 300px 250px, #ffe4b5, transparent),
+    radial-gradient(1px 1px at 400px 100px, #fff, transparent),
+    radial-gradient(2px 2px at 500px 300px, #b0e0e6, transparent),
+    radial-gradient(1px 1px at 50px 200px, #fff, transparent),
+    radial-gradient(1px 1px at 150px 350px, #ffd700, transparent),
+    radial-gradient(2px 2px at 250px 50px, #fff, transparent),
+    radial-gradient(1px 1px at 350px 200px, #87ceeb, transparent),
+    radial-gradient(1px 1px at 450px 400px, #fff, transparent),
+    radial-gradient(2px 2px at 550px 150px, #ffe4e1, transparent),
+    radial-gradient(1px 1px at 600px 350px, #fff, transparent);
+  background-size: 650px 450px;
+  animation: twinkle-star 5s ease-in-out infinite;
+  animation-delay: 1s;
+}
+
+/* Nebula cloud - more realistic */
+.nebula-cloud {
+  position: absolute;
+  border-radius: 50%;
+  filter: blur(40px);
+  opacity: 0.4;
+  mix-blend-mode: screen;
+}
+
+.nebula-cloud--red {
+  background: radial-gradient(ellipse at center,
+    rgba(255, 100, 100, 0.4) 0%,
+    rgba(200, 50, 80, 0.2) 40%,
+    transparent 70%);
+}
+
+.nebula-cloud--blue {
+  background: radial-gradient(ellipse at center,
+    rgba(100, 150, 255, 0.4) 0%,
+    rgba(50, 100, 200, 0.2) 40%,
+    transparent 70%);
+}
+
+.nebula-cloud--purple {
+  background: radial-gradient(ellipse at center,
+    rgba(180, 100, 255, 0.4) 0%,
+    rgba(120, 50, 180, 0.2) 40%,
+    transparent 70%);
 }
