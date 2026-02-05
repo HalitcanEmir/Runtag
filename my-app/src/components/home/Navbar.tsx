@@ -11,7 +11,6 @@ const navItems = [
   { label: "Yetenekler", href: "/yetenekler", id: "yetenekler" },
   { label: "Projeler", href: "/projeler", id: "projeler" },
   { label: "Ekip", href: "/ekip", id: "ekip" },
-  { label: "Kariyer", href: "/kariyer", id: "kariyer" },
 ];
 
 export default function Navbar() {
@@ -154,10 +153,20 @@ export default function Navbar() {
               >
                 <div className="pointer-events-none absolute inset-0 rounded-full bg-gradient-to-b from-white/[0.1] to-transparent" />
                 <Link
-                  href="/kariyer#basvur"
+                  href="/kariyer"
+                  className={`relative rounded-full px-4 py-2 text-[13px] font-medium transition-all duration-300 ${
+                    pathname === "/kariyer"
+                      ? "text-white bg-white/[0.15]"
+                      : "text-white/70 hover:text-white hover:bg-white/[0.08]"
+                  }`}
+                >
+                  Kariyer
+                </Link>
+                <Link
+                  href="/teklif"
                   className="group relative overflow-hidden rounded-full bg-gradient-to-r from-pink-500 to-pink-600 px-5 py-2 text-[13px] font-semibold text-white shadow-[0_2px_12px_rgba(236,72,153,0.35)] transition-all duration-300 hover:shadow-[0_4px_20px_rgba(236,72,153,0.5)]"
                 >
-                  <span className="relative z-10">Başvur</span>
+                  <span className="relative z-10">Teklif Al</span>
                   <span className="absolute inset-0 bg-gradient-to-r from-pink-400 to-pink-500 opacity-0 transition-opacity duration-300 group-hover:opacity-100" />
                 </Link>
               </div>
