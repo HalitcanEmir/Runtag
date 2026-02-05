@@ -155,9 +155,9 @@ export default function Capabilities() {
         </div>
       </div>
 
-      {/* Expandable Cards Grid */}
+      {/* Expandable Cards Grid - Show only first 3 */}
       <div className="relative z-10 mt-12 grid gap-4 px-4 sm:grid-cols-2 sm:px-6 lg:grid-cols-3 lg:px-8">
-        {cards.map((card) => (
+        {cards.slice(0, 3).map((card) => (
           <Link
             key={card.title}
             href={card.link}
@@ -301,6 +301,24 @@ export default function Capabilities() {
             />
           </Link>
         ))}
+      </div>
+
+      {/* See All Button */}
+      <div className="relative z-10 mt-10 flex justify-center px-4">
+        <Link
+          href="/yetenekler"
+          className="group flex items-center gap-2 rounded-full border border-white/20 bg-white/[0.05] px-8 py-3 text-sm font-medium text-white/90 backdrop-blur-sm transition-all duration-300 hover:border-pink-400/50 hover:bg-white/[0.1] hover:text-white"
+        >
+          Tümünü Gör
+          <svg
+            className="h-4 w-4 transition-transform duration-300 group-hover:translate-x-1"
+            fill="none"
+            viewBox="0 0 24 24"
+            stroke="currentColor"
+          >
+            <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M17 8l4 4m0 0l-4 4m4-4H3" />
+          </svg>
+        </Link>
       </div>
     </section>
   );

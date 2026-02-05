@@ -58,10 +58,10 @@ export default function Hero() {
   return (
     <section
       id="top"
-      className="relative flex h-screen w-full items-center justify-center"
+      className="relative z-[5] flex h-screen w-full items-center justify-center overflow-hidden"
     >
-      {/* Background video */}
-      <div className="fixed inset-0 z-[1] overflow-hidden">
+      {/* Background video - covers hero section only */}
+      <div className="absolute inset-0 z-0">
         <video
           className="h-full w-full object-cover"
           src="/sitevideo.mp4"
@@ -70,6 +70,8 @@ export default function Hero() {
           loop
           playsInline
         />
+        {/* Dark overlay for better text readability */}
+        <div className="absolute inset-0 bg-black/30" />
       </div>
 
       <motion.div
