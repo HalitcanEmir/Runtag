@@ -43,7 +43,13 @@ const stats = [
 
 export default function Stats() {
   return (
-    <section id="stats" className="py-16">
+    <section id="stats" className="relative py-16">
+      {/* Subtle cyan/teal accent background */}
+      <div className="pointer-events-none absolute inset-0 -z-10">
+        <div className="absolute left-1/4 top-0 h-64 w-64 rounded-full bg-cyan-500/[0.03] blur-3xl" />
+        <div className="absolute right-1/4 bottom-0 h-48 w-48 rounded-full bg-teal-500/[0.03] blur-3xl" />
+      </div>
+
       {/* Header */}
       <motion.div
         initial={{ opacity: 0, y: 20 }}
@@ -52,7 +58,7 @@ export default function Stats() {
         transition={{ duration: 0.6 }}
         className="mb-10 text-center"
       >
-        <p className="text-[10px] font-medium uppercase tracking-[0.5em] text-white/20">
+        <p className="text-[10px] font-medium uppercase tracking-[0.5em] text-cyan-400/40">
           Rakamlar
         </p>
         <h2 className="mt-3 text-xl font-semibold text-white/90 sm:text-2xl">
@@ -79,21 +85,21 @@ export default function Stats() {
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
             transition={{ duration: 0.4, delay: index * 0.05 }}
-            className="group relative overflow-hidden rounded-xl border border-white/[0.04] bg-white/[0.01] p-4 transition-all duration-300 hover:border-white/[0.08] hover:bg-white/[0.02]"
+            className="group relative overflow-hidden rounded-xl border border-cyan-500/[0.08] bg-cyan-500/[0.02] p-4 transition-all duration-300 hover:border-cyan-400/[0.15] hover:bg-cyan-500/[0.04]"
           >
             {/* Subtle glow on hover */}
-            <div className="pointer-events-none absolute -right-4 -top-4 h-16 w-16 rounded-full bg-purple-500/5 opacity-0 blur-xl transition-opacity duration-300 group-hover:opacity-100" />
+            <div className="pointer-events-none absolute -right-4 -top-4 h-16 w-16 rounded-full bg-cyan-400/10 opacity-0 blur-xl transition-opacity duration-300 group-hover:opacity-100" />
             
             <div className="relative flex items-start justify-between">
               <div>
-                <span className="text-2xl font-bold text-white/90">
+                <span className="text-2xl font-bold text-cyan-50">
                   {stat.value}
                 </span>
-                <p className="mt-1 text-[10px] uppercase tracking-[0.15em] text-white/30">
+                <p className="mt-1 text-[10px] uppercase tracking-[0.15em] text-cyan-200/40">
                   {stat.label}
                 </p>
               </div>
-              <div className="rounded-lg border border-white/[0.06] bg-white/[0.02] p-2 text-white/20">
+              <div className="rounded-lg border border-cyan-400/[0.1] bg-cyan-500/[0.05] p-2 text-cyan-300/40">
                 {stat.icon}
               </div>
             </div>
