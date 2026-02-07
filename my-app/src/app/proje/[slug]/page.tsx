@@ -1,17 +1,17 @@
+"use client";
+
 import Navbar from "@/components/home/Navbar";
 import Footer from "@/components/home/Footer";
 import Image from "next/image";
 import Link from "next/link";
-import { projects } from "@/data/projects";
+import { useParams } from "next/navigation";
+import { useSiteData } from "@/context/SiteDataContext";
 
-export default async function ProjePage({
-  params,
-}: {
-  params: Promise<{ slug: string }>;
-}) {
-  const { slug: rawSlug } = await params;
-  const slug = rawSlug?.toLowerCase();
-  const project = projects.find((item) => item.slug === slug);
+export default function ProjePage() {
+  const params = useParams();
+  const slug = (params.slug as string)?.toLowerCase();
+  const { data } = useSiteData();
+  const project = data.projects.find((item) => item.slug === slug);
   
   if (!project) {
     return (
@@ -186,10 +186,4 @@ export default async function ProjePage({
       <Footer />
     </div>
   );
-}
-
-export async function generateStaticParams() {
-  return projects.map((project) => ({
-    slug: project.slug,
-  }));
 }

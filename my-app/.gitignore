@@ -36,6 +36,9 @@ yarn-error.log*
 # vercel
 .vercel
 
+# server data (contains SMTP credentials)
+/data/
+
 # typescript
 *.tsbuildinfo
 next-env.d.ts

@@ -2,95 +2,11 @@
 
 import { motion } from "framer-motion";
 import Image from "next/image";
-
-const columns = [
-  {
-    title: "Fikir Aşaması",
-    color: "red",
-    gradient: "from-red-500 to-orange-500",
-    bgGlow: "bg-red-500/20",
-    tasks: [
-      {
-        title: "Beyin Fırtınası",
-        description: "Yeni proje fikirleri toplantılar ve Discord'da paylaşılıyor.",
-        image: "https://images.unsplash.com/photo-1517842645767-c639042777db?w=600&q=80",
-        members: 3,
-        priority: "high",
-      },
-      {
-        title: "Ekip Oluşturma",
-        description: "İlgilenen herkes projeye katılabilir, deneyim şart değil!",
-        members: 2,
-        priority: "medium",
-      },
-    ],
-  },
-  {
-    title: "Geliştirme",
-    color: "yellow",
-    gradient: "from-yellow-500 to-amber-500",
-    bgGlow: "bg-yellow-500/20",
-    tasks: [
-      {
-        title: "Birlikte Öğrenme",
-        description: "Tecrübeli üyeler yeni başlayanlara mentorluk yapıyor.",
-        members: 2,
-        priority: "medium",
-      },
-      {
-        title: "Yarışma Ekipleri",
-        description: "Teknofest, hackathon ve yarışmalar için özel ekipler kuruluyor.",
-        image: "https://images.unsplash.com/photo-1552664730-d307ca884978?w=600&q=80",
-        members: 4,
-        priority: "high",
-      },
-    ],
-  },
-  {
-    title: "Test & Demo",
-    color: "blue",
-    gradient: "from-blue-500 to-cyan-500",
-    bgGlow: "bg-blue-500/20",
-    tasks: [
-      {
-        title: "Canlı Demolar",
-        description: "Projeler gerçek kullanıcılara sunuluyor ve geri bildirim alınıyor.",
-        image: "https://images.unsplash.com/photo-1512941937669-90a1b58e7e9c?w=600&q=80",
-        members: 2,
-        priority: "medium",
-      },
-      {
-        title: "Haftalık Sprintler",
-        description: "Esnek çalışma saatleri, herkes kendi hızında katkı sağlıyor.",
-        members: 3,
-        priority: "low",
-      },
-    ],
-  },
-  {
-    title: "Yayınlandı",
-    color: "green",
-    gradient: "from-emerald-500 to-green-500",
-    bgGlow: "bg-emerald-500/20",
-    tasks: [
-      {
-        title: "Portfolyo & CV",
-        description: "Tamamlanan projeler CV'ne eklenir, referans olarak kullanılır.",
-        members: 4,
-        priority: "high",
-      },
-      {
-        title: "Sitede Listeleme",
-        description: "Yaptığınız projeler sitemizde sergileniyor, herkes görebiliyor!",
-        image: "https://images.unsplash.com/photo-1541701494587-cb58502866ab?w=600&q=80",
-        members: 5,
-        priority: "medium",
-      },
-    ],
-  },
-];
+import { useSiteData } from "@/context/SiteDataContext";
 
 export default function Crews() {
+  const { data } = useSiteData();
+  const columns = data.crews;
   return (
     <section id="crews" className="relative overflow-hidden py-20">
       {/* Ambient Background Effects */}

@@ -1,9 +1,12 @@
+"use client";
+
 import Link from "next/link";
-import { categories, projects } from "@/data/projects";
+import { useSiteData } from "@/context/SiteDataContext";
 
 export default function Categories() {
-  const items = Object.entries(categories).map(([slug, info]) => {
-    const count = projects.filter((project) => project.categorySlug === slug).length;
+  const { data } = useSiteData();
+  const items = Object.entries(data.categories).map(([slug, info]) => {
+    const count = data.projects.filter((project) => project.categorySlug === slug).length;
     return {
       slug,
       name: info.name,

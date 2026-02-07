@@ -1,18 +1,18 @@
+"use client";
+
 import Navbar from "@/components/home/Navbar";
 import Footer from "@/components/home/Footer";
 import Image from "next/image";
 import Link from "next/link";
-import { categories, projects } from "@/data/projects";
+import { useParams } from "next/navigation";
+import { useSiteData } from "@/context/SiteDataContext";
 
-export default async function KategoriPage({
-  params,
-}: {
-  params: Promise<{ slug: string }>;
-}) {
-  const { slug: rawSlug } = await params;
-  const slug = rawSlug?.toLowerCase();
-  const category = categories[slug as keyof typeof categories];
-  const filteredProjects = projects.filter((p) => p.categorySlug === slug);
+export default function KategoriPage() {
+  const params = useParams();
+  const slug = (params.slug as string)?.toLowerCase();
+  const { data } = useSiteData();
+  const category = data.categories[slug];
+  const filteredProjects = data.projects.filter((p) => p.categorySlug === slug);
 
   if (!category) {
     return (
@@ -123,10 +123,4 @@ export default async function KategoriPage({
       <Footer />
     </div>
   );
-}
-
-export async function generateStaticParams() {
-  return Object.keys(categories).map((slug) => ({
-    slug,
-  }));
 }

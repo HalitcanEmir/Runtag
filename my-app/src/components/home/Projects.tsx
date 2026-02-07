@@ -3,14 +3,15 @@
 import { motion } from "framer-motion";
 import Image from "next/image";
 import Link from "next/link";
-import { projects } from "@/data/projects";
+import { useSiteData } from "@/context/SiteDataContext";
 
 type ProjectsProps = {
   limit?: number;
 };
 
 export default function Projects({ limit }: ProjectsProps) {
-  const displayedProjects = limit ? projects.slice(0, limit) : projects;
+  const { data } = useSiteData();
+  const displayedProjects = limit ? data.projects.slice(0, limit) : data.projects;
   return (
     <section id="projects" className="relative py-20">
       {/* Background glow */}

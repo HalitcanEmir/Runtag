@@ -2,15 +2,10 @@
 
 import { motion, AnimatePresence } from "framer-motion";
 import { useEffect, useState } from "react";
+import { useSiteData } from "@/context/SiteDataContext";
 
-const typewriterTexts = [
-  "Ekibimize katıl, sen de bunun bir parçası ol.",
-  "Sitenizin bakımı, yapımı... Hepsini yapalım.",
-  "Indie oyunlarımıza bakmak ister misiniz?",
-  "Hayalinizdeki projeyi birlikte geliştirelim.",
-];
-
-function Typewriter() {
+function Typewriter({ texts }: { texts: string[] }) {
+  const typewriterTexts = texts.length > 0 ? texts : ["Hoş geldiniz."];
   const [textIndex, setTextIndex] = useState(0);
   const [charIndex, setCharIndex] = useState(0);
   const [isDeleting, setIsDeleting] = useState(false);
@@ -55,6 +50,8 @@ function Typewriter() {
 }
 
 export default function Hero() {
+  const { data } = useSiteData();
+  const { hero } = data;
   return (
     <section
       id="top"
@@ -96,7 +93,7 @@ export default function Hero() {
               transition={{ delay: 0.2, duration: 0.6 }}
               className="text-3xl font-bold tracking-tight text-white drop-shadow-[0_2px_10px_rgba(0,0,0,0.3)] sm:text-4xl lg:text-5xl"
             >
-              Runteg Tech Studio
+              {hero.title}
             </motion.h1>
 
             {/* Subtitle with animation */}
@@ -106,7 +103,7 @@ export default function Hero() {
               transition={{ delay: 0.4, duration: 0.5 }}
               className="text-[11px] font-medium uppercase tracking-[0.35em] text-white/50"
             >
-              Ekip Bazlı Teknoloji Stüdyosu
+              {hero.subtitle}
             </motion.p>
 
             {/* Typewriter - bigger and more prominent */}
@@ -116,7 +113,7 @@ export default function Hero() {
               transition={{ delay: 0.6, duration: 0.5 }}
               className="min-h-[36px] text-lg font-semibold sm:text-xl lg:text-2xl"
             >
-              <Typewriter />
+              <Typewriter texts={hero.typewriterTexts} />
             </motion.div>
 
             {/* CTA Buttons */}
@@ -127,10 +124,10 @@ export default function Hero() {
               className="flex flex-wrap items-center justify-center gap-4 pt-2"
             >
               <a
-                href="/projeler"
+                href={hero.ctaLink}
                 className="group flex items-center gap-2 rounded-full border border-white/20 bg-white/[0.05] px-5 py-2.5 text-sm font-medium text-white/90 backdrop-blur-sm transition-all duration-300 hover:border-white/30 hover:bg-white/[0.1] hover:text-white sm:px-6 sm:py-3"
               >
-                Projelerimiz
+                {hero.ctaText}
                 <span className="transition-transform duration-300 group-hover:translate-x-1">→</span>
               </a>
             </motion.div>

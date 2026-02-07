@@ -170,6 +170,17 @@ export default function Navbar() {
                   <span className="absolute inset-0 bg-gradient-to-r from-pink-400 to-pink-500 opacity-0 transition-opacity duration-300 group-hover:opacity-100" />
                 </Link>
               </div>
+
+              {/* Admin Button - separate */}
+              <Link
+                href="/admin"
+                className="relative flex h-9 w-9 items-center justify-center rounded-full border border-white/10 bg-white/[0.06] text-white/40 backdrop-blur-xl transition-all duration-300 hover:border-white/20 hover:bg-white/[0.1] hover:text-white/70"
+                title="Admin Paneli"
+              >
+                <svg className="h-4 w-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d="M5.121 17.804A13.937 13.937 0 0112 16c2.5 0 4.847.655 6.879 1.804M15 10a3 3 0 11-6 0 3 3 0 016 0zm6 2a9 9 0 11-18 0 9 9 0 0118 0z" />
+                </svg>
+              </Link>
             </motion.div>
           )}
         </AnimatePresence>
