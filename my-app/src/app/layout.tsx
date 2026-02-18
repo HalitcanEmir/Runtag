@@ -16,6 +16,9 @@ const inter = Inter({
 export const metadata: Metadata = {
   title: "Liquid Glass Tech Studio",
   description: "Crew-based liquid-glass tech studio homepage",
+  icons: {
+    icon: "/logo.png",
+  },
 };
 
 export default function RootLayout({
