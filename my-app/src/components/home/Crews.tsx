@@ -46,7 +46,7 @@ export default function Crews() {
             </p>
           </div>
           <motion.a
-            href="#join"
+            href="/kariyer#basvur"
             whileHover={{ scale: 1.02 }}
             whileTap={{ scale: 0.98 }}
             className="group relative inline-flex items-center gap-2 overflow-hidden rounded-full bg-gradient-to-r from-pink-500 to-purple-600 px-8 py-4 text-sm font-semibold text-white shadow-[0_0_30px_rgba(236,72,153,0.4)] transition-shadow hover:shadow-[0_0_40px_rgba(236,72,153,0.6)]"
