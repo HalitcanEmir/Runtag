@@ -201,7 +201,7 @@ export default function Process() {
           className="mt-12 text-center"
         >
           <a
-            href="#join"
+            href="/kariyer#basvur"
             className="inline-flex items-center gap-2 text-[10px] font-medium uppercase tracking-[0.2em] text-white/30 transition-colors duration-300 hover:text-white/60"
           >
             <span className="h-px w-6 bg-white/20" />
