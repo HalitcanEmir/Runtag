@@ -4,11 +4,11 @@ import Image from "next/image";
 import { motion } from "framer-motion";
 
 const navLinks = [
-  { label: "Ana Sayfa", href: "#top" },
-  { label: "Yetenekler", href: "#capabilities" },
-  { label: "Projeler", href: "#projects" },
-  { label: "Ekip", href: "#crews" },
-  { label: "Katıl", href: "#join" },
+  { label: "Ana Sayfa", href: "/" },
+  { label: "Yetenekler", href: "/#capabilities" },
+  { label: "Projeler", href: "/#projects" },
+  { label: "Ekip", href: "/#crews" },
+  { label: "Katıl", href: "/kariyer#basvur" },
 ];
 
 const socialLinks = [
@@ -64,7 +64,7 @@ export default function Footer() {
           
           {/* Brand Section */}
           <div className="space-y-4">
-            <a href="#top" className="inline-flex items-center gap-3">
+            <a href="/" className="inline-flex items-center gap-3">
               <div className="relative">
                 <div className="absolute -inset-1 rounded-xl bg-gradient-to-r from-pink-500/20 to-purple-500/20 blur-sm" />
                 <Image
@@ -134,7 +134,7 @@ export default function Footer() {
                 runtegiletisim@gmail.com
               </a>
               <a
-                href="#join"
+                href="/kariyer#basvur"
                 className="group inline-flex items-center gap-2 rounded-full border border-white/10 bg-white/[0.02] px-4 py-2 text-xs font-medium text-white/60 transition-all duration-300 hover:border-pink-500/30 hover:bg-pink-500/5 hover:text-white"
               >
                 <span className="h-1.5 w-1.5 rounded-full bg-emerald-400 animate-pulse" />
