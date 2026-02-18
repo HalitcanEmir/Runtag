@@ -83,7 +83,7 @@ export type SiteData = {
 // ==================== DEFAULTS ====================
 
 const defaultHero: HeroSettings = {
-  title: "Runteg Tech Studio",
+  title: "Runteg",
   subtitle: "Ekip Bazlı Teknoloji Stüdyosu",
   typewriterTexts: [
     "Ekibimize katıl, sen de bunun bir parçası ol.",

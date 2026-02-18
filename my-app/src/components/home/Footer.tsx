@@ -77,7 +77,6 @@ export default function Footer() {
               </div>
               <div>
                 <h3 className="text-lg font-bold text-white">Runteg</h3>
-                <p className="text-xs text-white/40">Tech Studio</p>
               </div>
             </a>
             <p className="max-w-xs text-sm leading-relaxed text-white/40">
@@ -171,7 +170,7 @@ export default function Footer() {
 
           <div className="flex flex-col items-center justify-between gap-4 sm:flex-row">
             <p className="text-xs text-white/25">
-              © 2026 Runteg Tech Studio. Tüm hakları saklıdır.
+              © 2026 Runteg. Tüm hakları saklıdır.
             </p>
             <div className="flex items-center gap-6 text-xs text-white/25">
               <a href="#" className="transition-colors duration-200 hover:text-white/50">
