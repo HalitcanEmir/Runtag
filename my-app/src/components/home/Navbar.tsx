@@ -111,6 +111,7 @@ export default function Navbar() {
                   <span className="text-sm font-semibold tracking-tight text-white">
                     Runteg
                   </span>
+                  <span className="text-[10px] text-white/50">Tech Studio</span>
                 </div>
               </Link>
 
