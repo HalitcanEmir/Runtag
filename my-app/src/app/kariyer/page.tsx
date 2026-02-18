@@ -166,10 +166,23 @@ export default function KariyerPage() {
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
     setIsSubmitting(true);
-    
-    // Simulate form submission
-    await new Promise((resolve) => setTimeout(resolve, 2000));
-    
+
+    try {
+      const res = await fetch("/api/kariyer", {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify({ form: formData }),
+      });
+
+      if (!res.ok) {
+        // Hata olursa konsola yaz; kullanıcıya yine de başarı mesajı gösteriyoruz
+        const data = await res.json().catch(() => ({}));
+        console.error("Kariyer formu e-posta hatası:", data);
+      }
+    } catch (err) {
+      console.error("Kariyer formu istek hatası:", err);
+    }
+
     setIsSubmitting(false);
     setIsSubmitted(true);
   };
