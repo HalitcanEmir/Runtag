@@ -128,10 +128,10 @@ export default function Footer() {
             </h4>
             <div className="space-y-3">
               <a
-                href="mailto:hello@runteg.com"
+                href="mailto:runtegiletisim@gmail.com"
                 className="block text-sm text-white/40 transition-colors duration-200 hover:text-white/80"
               >
-                hello@runteg.com
+                runtegiletisim@gmail.com
               </a>
               <a
                 href="#join"

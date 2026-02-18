@@ -59,7 +59,7 @@ export default function EmailAyarlariPage() {
         method: "POST",
         headers: { "Content-Type": "application/json" },
         body: JSON.stringify({
-          to: config.notifyEmail || config.smtpUser,
+          to: "runtegiletisim@gmail.com",
           subject: "🧪 Runteg E-posta Test",
           htmlBody: `
             <div style="font-family: 'Segoe UI', sans-serif; max-width: 500px; margin: 0 auto; background: #0a0a14; color: #e0e0e0; border-radius: 12px; overflow: hidden; border: 1px solid #1a1a2e;">
@@ -184,7 +184,7 @@ export default function EmailAyarlariPage() {
               type="email"
               value={config.notifyEmail}
               onChange={(e) => updateField("notifyEmail", e.target.value)}
-              placeholder="admin@runteg.com"
+              placeholder="runtegiletisim@gmail.com"
               className="w-full rounded-lg border border-white/10 bg-white/5 px-3 py-2.5 text-sm text-white/80 outline-none transition-colors focus:border-purple-500/30 placeholder:text-white/20"
             />
             <p className="mt-1 text-[10px] text-white/20">Yeni teklif geldiğinde bildirim gönderilecek adres</p>

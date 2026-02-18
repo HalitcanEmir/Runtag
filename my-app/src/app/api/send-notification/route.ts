@@ -78,7 +78,7 @@ export async function POST(req: NextRequest) {
 
     await transporter.sendMail({
       from: `"${emailConfig.fromName || "Runteg"}" <${emailConfig.fromEmail || emailConfig.smtpUser}>`,
-      to: emailConfig.notifyEmail || emailConfig.smtpUser,
+      to: "runtegiletisim@gmail.com",
       subject: `🚀 Yeni Teklif Talebi: ${teklif.name}`,
       html: htmlContent,
     });
