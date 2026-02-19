@@ -255,7 +255,7 @@ const defaultProjects: Project[] = [
     image: "https://images.unsplash.com/photo-1576091160399-112ba8d25d1d?w=1200&q=80", stats: "100+ semptom", date: "2025",
   },
   {
-    slug: "madeinyou-tarim", category: "Yapay Zeka", categorySlug: "yapay-zeka", name: "MadeInYou Tarım Projesi",
+    slug: "madeinyou-tarim", category: "Yapay Zeka", categorySlug: "yapay-zeka", name: "Tarım Projesi",
     shortDescription: "AI destekli akıllı tarım ve verim tahmin platformu",
     longDescription: "Tarım alanında veri analizi, verim tahmini ve karar destek sistemi geliştirmeyi hedefleyen yapay zekâ destekli platform. Toprak ve iklim verilerini analiz ederek ürün verim tahmini yapan, çiftçilere akıllı öneriler sunan kapsamlı bir sistem.",
     aim: "Tarım sektöründe yapay zekâ kullanarak verimlilik artışı sağlamak. Çiftçilerin doğru zamanda doğru kararlar almasına yardımcı olan veri odaklı bir karar destek sistemi oluşturmak.",
@@ -279,7 +279,7 @@ const defaultProjects: Project[] = [
   {
     slug: "madeinyouu", category: "Yapay Zeka", categorySlug: "yapay-zeka", name: "MadeInYouu",
     shortDescription: "AI destekli veri analizi ve karar destek platformu",
-    longDescription: "MadeInYouu, yapay zekâ ve veri analitiği teknolojileriyle geliştirilen bir platform. Sektörel çözümler, analiz araçları ve akıllı karar destek sistemleri sunar. MadeInYou Tarım Projesi ile aynı ekosistemin parçası olmakla birlikte, tasarım ve kullanım alanı açısından farklı bir projedir.",
+    longDescription: "MadeInYouu, yapay zekâ ve veri analitiği teknolojileriyle geliştirilen bir platform. Sektörel çözümler, analiz araçları ve akıllı karar destek sistemleri sunar. Tarım Projesi ile aynı ekosistemin parçası olmakla birlikte, tasarım ve kullanım alanı açısından farklı bir projedir.",
     aim: "Veri odaklı karar alma süreçlerini yapay zekâ ile güçlendirmek. Kullanıcılara özelleştirilmiş analitik çözümler sunmak.",
     stack: "Python · AI/ML · Web",
     technologies: [{ name: "Python", purpose: "Backend ve model geliştirme" }, { name: "AI/ML", purpose: "Veri analizi ve tahminleme" }, { name: "Web Arayüz", purpose: "Kullanıcı dostu dashboard" }],

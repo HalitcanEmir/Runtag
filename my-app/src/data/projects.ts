@@ -113,7 +113,7 @@ export const projects: Project[] = [
     slug: "madeinyou-tarim",
     category: "Yapay Zeka",
     categorySlug: "yapay-zeka",
-    name: "MadeInYou Tarım Projesi",
+    name: "Tarım Projesi",
     shortDescription: "AI destekli akıllı tarım ve verim tahmin platformu",
     longDescription:
       "Tarım alanında veri analizi, verim tahmini ve karar destek sistemi geliştirmeyi hedefleyen yapay zekâ destekli platform. Toprak ve iklim verilerini analiz ederek ürün verim tahmini yapan, çiftçilere akıllı öneriler sunan kapsamlı bir sistem. Makine öğrenmesi modelleri ile tarımsal verimliliği artırmayı amaçlar.",
@@ -166,7 +166,7 @@ export const projects: Project[] = [
     name: "MadeInYouu",
     shortDescription: "AI destekli veri analizi ve karar destek platformu",
     longDescription:
-      "MadeInYouu, yapay zekâ ve veri analitiği teknolojileriyle geliştirilen bir platform. Sektörel çözümler, analiz araçları ve akıllı karar destek sistemleri sunar. MadeInYou Tarım Projesi ile aynı ekosistemin parçası olmakla birlikte, tasarım ve kullanım alanı açısından farklı bir projedir.",
+      "MadeInYouu, yapay zekâ ve veri analitiği teknolojileriyle geliştirilen bir platform. Sektörel çözümler, analiz araçları ve akıllı karar destek sistemleri sunar. Tarım Projesi ile aynı ekosistemin parçası olmakla birlikte, tasarım ve kullanım alanı açısından farklı bir projedir.",
     aim: "Veri odaklı karar alma süreçlerini yapay zekâ ile güçlendirmek. Kullanıcılara özelleştirilmiş analitik çözümler sunmak.",
     stack: "Python · AI/ML · Web",
     technologies: [
