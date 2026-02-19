@@ -13,6 +13,7 @@ export type Project = {
   categorySlug: string;
   alsoInCategories?: string[];
   name: string;
+  url?: string;
   shortDescription: string;
   longDescription: string;
   aim: string;
@@ -226,6 +227,7 @@ const defaultProjects: Project[] = [
     technologies: [{ name: "Next.js", purpose: "SSR ve performanslı sayfa yükleme" }, { name: "Tailwind CSS", purpose: "Modern ve responsive arayüz tasarımı" }, { name: "SEO Optimizasyonu", purpose: "Arama motorlarında üst sıralarda yer alma" }, { name: "Responsive Tasarım", purpose: "Tüm cihazlarda uyumlu görüntüleme" }],
     team: [{ name: "Halitcan Emir", role: "Full Stack Developer", linkedin: "https://www.linkedin.com/in/halitcanemir/" }],
     image: "https://images.unsplash.com/photo-1460925895917-afdab827c52f?w=1200&q=80", stats: "Yayında", date: "2025",
+    url: "https://ccproje.com/tr",
   },
   {
     slug: "runteg", category: "Web Siteleri", categorySlug: "web-siteleri", name: "runteg.com",
@@ -240,6 +242,7 @@ const defaultProjects: Project[] = [
     ],
     image: "https://images.unsplash.com/photo-1618005182384-a83a8bd57fbe?w=1200&q=80", stats: "Yayında", date: "2025",
     alsoInCategories: ["platformlarimiz"],
+    url: "https://www.runteg.com",
   },
   {
     slug: "saglik-analiz-platformu", category: "Sağlık", categorySlug: "saglik", name: "AI Destekli Sağlık Analiz Platformu",

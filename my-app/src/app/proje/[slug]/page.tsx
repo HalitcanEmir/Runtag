@@ -131,6 +131,27 @@ export default function ProjePage() {
           </div>
         </div>
 
+        {/* Site URL Card - for web projects */}
+        {project.url && (
+          <a
+            href={project.url}
+            target="_blank"
+            rel="noopener noreferrer"
+            className="group mb-8 flex items-center gap-4 rounded-2xl border border-white/[0.15] bg-white/[0.05] p-5 backdrop-blur-xl transition-all hover:border-pink-500/40 hover:bg-white/[0.08]"
+          >
+            <div className="flex h-12 w-12 shrink-0 items-center justify-center rounded-xl bg-white/[0.1]">
+              <svg className="h-6 w-6 text-white/80" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14" />
+              </svg>
+            </div>
+            <div className="min-w-0 flex-1">
+              <p className="text-xs font-medium uppercase tracking-wider text-white/50">Canlı Site</p>
+              <p className="truncate font-mono text-sm text-white sm:text-base">{project.url}</p>
+            </div>
+            <span className="shrink-0 text-white/40 transition-transform group-hover:translate-x-1">→</span>
+          </a>
+        )}
+
         {/* Content Sections */}
         <div className="space-y-8">
           {/* Kısa Özet */}

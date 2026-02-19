@@ -24,6 +24,7 @@ export type Project = {
   image: string;
   stats: string;
   date: string;
+  url?: string;
 };
 
 export const categories = {
@@ -56,6 +57,7 @@ export const projects: Project[] = [
     image: "https://images.unsplash.com/photo-1460925895917-afdab827c52f?w=1200&q=80",
     stats: "Yayında",
     date: "2025",
+    url: "https://ccproje.com/tr",
   },
   {
     slug: "runteg",
@@ -81,6 +83,7 @@ export const projects: Project[] = [
     stats: "Yayında",
     date: "2025",
     alsoInCategories: ["platformlarimiz"],
+    url: "https://www.runteg.com",
   },
   {
     slug: "saglik-analiz-platformu",
