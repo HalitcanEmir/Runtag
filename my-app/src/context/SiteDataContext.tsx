@@ -303,7 +303,7 @@ type SiteDataContextType = {
 
 const SiteDataContext = createContext<SiteDataContextType | null>(null);
 
-const STORAGE_KEY = "runteg_site_data_v5";
+const STORAGE_KEY = "runteg_site_data_v6";
 
 function getInitialData(): SiteData {
   if (typeof window === "undefined") {

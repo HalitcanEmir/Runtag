@@ -137,18 +137,18 @@ export default function ProjePage() {
             href={project.url}
             target="_blank"
             rel="noopener noreferrer"
-            className="group mb-8 flex items-center gap-4 rounded-2xl border border-white/[0.15] bg-white/[0.05] p-5 backdrop-blur-xl transition-all hover:border-pink-500/40 hover:bg-white/[0.08]"
+            className="group mb-8 flex cursor-pointer items-center gap-4 rounded-2xl border-2 border-pink-500/30 bg-pink-500/10 p-5 backdrop-blur-xl transition-all hover:border-pink-500/60 hover:bg-pink-500/20"
           >
-            <div className="flex h-12 w-12 shrink-0 items-center justify-center rounded-xl bg-white/[0.1]">
-              <svg className="h-6 w-6 text-white/80" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <div className="flex h-14 w-14 shrink-0 items-center justify-center rounded-xl bg-pink-500/20">
+              <svg className="h-7 w-7 text-pink-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                 <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14" />
               </svg>
             </div>
             <div className="min-w-0 flex-1">
-              <p className="text-xs font-medium uppercase tracking-wider text-white/50">Canlı Site</p>
-              <p className="truncate font-mono text-sm text-white sm:text-base">{project.url}</p>
+              <p className="text-xs font-semibold uppercase tracking-wider text-pink-400">Canlı Site — Tıklayarak Ziyaret Et</p>
+              <p className="mt-0.5 truncate font-mono text-sm font-medium text-white sm:text-base">{project.url}</p>
             </div>
-            <span className="shrink-0 text-white/40 transition-transform group-hover:translate-x-1">→</span>
+            <span className="shrink-0 rounded-full bg-pink-500/30 px-4 py-2 text-sm font-semibold text-white transition-all group-hover:bg-pink-500/50">Git →</span>
           </a>
         )}
 
