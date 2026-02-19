@@ -12,7 +12,9 @@ export default function KategoriPage() {
   const slug = (params.slug as string)?.toLowerCase();
   const { data } = useSiteData();
   const category = data.categories[slug];
-  const filteredProjects = data.projects.filter((p) => p.categorySlug === slug);
+  const filteredProjects = data.projects.filter(
+    (p) => p.categorySlug === slug || (p.alsoInCategories?.includes(slug ?? "") ?? false)
+  );
 
   if (!category) {
     return (

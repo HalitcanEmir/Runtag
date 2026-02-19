@@ -3,10 +3,14 @@
 import Link from "next/link";
 import { useSiteData } from "@/context/SiteDataContext";
 
+function isProjectInCategory(project: { categorySlug: string; alsoInCategories?: string[] }, categorySlug: string) {
+  return project.categorySlug === categorySlug || (project.alsoInCategories?.includes(categorySlug) ?? false);
+}
+
 export default function Categories() {
   const { data } = useSiteData();
   const items = Object.entries(data.categories).map(([slug, info]) => {
-    const count = data.projects.filter((project) => project.categorySlug === slug).length;
+    const count = data.projects.filter((p) => isProjectInCategory(p, slug)).length;
     return {
       slug,
       name: info.name,

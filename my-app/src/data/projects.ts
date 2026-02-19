@@ -12,6 +12,7 @@ export type Project = {
   slug: string;
   category: string;
   categorySlug: string;
+  alsoInCategories?: string[];
   name: string;
   shortDescription: string;
   longDescription: string;
@@ -26,6 +27,7 @@ export type Project = {
 
 export const categories = {
   "web-siteleri": { name: "Web Siteleri", emoji: "🌐", color: "blue" },
+  platformlarimiz: { name: "Platformlarımız", emoji: "🚀", color: "purple" },
   saglik: { name: "Sağlık", emoji: "🏥", color: "green" },
   "yapay-zeka": { name: "Yapay Zeka", emoji: "🤖", color: "cyan" },
 };
@@ -78,6 +80,7 @@ export const projects: Project[] = [
     image: "https://images.unsplash.com/photo-1618005182384-a83a8bd57fbe?w=1200&q=80",
     stats: "Yayında",
     date: "2025",
+    alsoInCategories: ["platformlarimiz"],
   },
   {
     slug: "saglik-analiz-platformu",
@@ -126,6 +129,7 @@ export const projects: Project[] = [
     image: "https://images.unsplash.com/photo-1574943320219-553eb213f72d?w=1200&q=80",
     stats: "AI Powered",
     date: "2025",
+    alsoInCategories: ["platformlarimiz"],
   },
   {
     slug: "restaurant-ai",
@@ -150,6 +154,7 @@ export const projects: Project[] = [
     image: "https://images.unsplash.com/photo-1517248135467-4c7edcad34c4?w=1200&q=80",
     stats: "AI Powered",
     date: "2025",
+    alsoInCategories: ["platformlarimiz"],
   },
   {
     slug: "madeinyouu",
@@ -173,5 +178,6 @@ export const projects: Project[] = [
     image: "https://images.unsplash.com/photo-1555949963-aa79dcee981c?w=1200&q=80",
     stats: "AI Powered",
     date: "2025",
+    alsoInCategories: ["platformlarimiz"],
   },
 ];

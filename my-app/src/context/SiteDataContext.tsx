@@ -11,6 +11,7 @@ export type Project = {
   slug: string;
   category: string;
   categorySlug: string;
+  alsoInCategories?: string[];
   name: string;
   shortDescription: string;
   longDescription: string;
@@ -210,6 +211,7 @@ const defaultCrews: CrewColumn[] = [
 
 const defaultCategories: Record<string, SiteCategory> = {
   "web-siteleri": { name: "Web Siteleri", emoji: "🌐", color: "blue" },
+  platformlarimiz: { name: "Platformlarımız", emoji: "🚀", color: "purple" },
   saglik: { name: "Sağlık", emoji: "🏥", color: "green" },
   "yapay-zeka": { name: "Yapay Zeka", emoji: "🤖", color: "cyan" },
 };
@@ -234,6 +236,7 @@ const defaultProjects: Project[] = [
     technologies: [{ name: "Next.js", purpose: "Full-stack React framework" }, { name: "Framer Motion", purpose: "Animasyonlu geçişler ve etkileşimler" }, { name: "Tailwind CSS", purpose: "Liquid Glass tasarım sistemi" }, { name: "TypeScript", purpose: "Tip güvenli geliştirme" }],
     team: [{ name: "Halitcan E.", role: "Lead Developer" }, { name: "Tasarım Ekibi", role: "UI/UX & Liquid Glass Design" }],
     image: "https://images.unsplash.com/photo-1618005182384-a83a8bd57fbe?w=1200&q=80", stats: "Yayında", date: "2025",
+    alsoInCategories: ["platformlarimiz"],
   },
   {
     slug: "saglik-analiz-platformu", category: "Sağlık", categorySlug: "saglik", name: "AI Destekli Sağlık Analiz Platformu",
@@ -254,6 +257,7 @@ const defaultProjects: Project[] = [
     technologies: [{ name: "Python", purpose: "Veri işleme ve model geliştirme" }, { name: "TensorFlow", purpose: "Verim tahmin modeli eğitimi" }, { name: "Pandas & NumPy", purpose: "Toprak ve iklim verisi analizi" }, { name: "Scikit-learn", purpose: "Öneri motoru ve sınıflandırma" }],
     team: [{ name: "Halitcan E.", role: "AI/ML Engineer" }, { name: "Veri Ekibi", role: "Data Collection & Analysis" }],
     image: "https://images.unsplash.com/photo-1574943320219-553eb213f72d?w=1200&q=80", stats: "AI Powered", date: "2025",
+    alsoInCategories: ["platformlarimiz"],
   },
   {
     slug: "restaurant-ai", category: "Yapay Zeka", categorySlug: "yapay-zeka", name: "Restaurant AI Öneri Sistemi",
@@ -264,6 +268,7 @@ const defaultProjects: Project[] = [
     technologies: [{ name: "Python", purpose: "Backend ve model geliştirme" }, { name: "Collaborative Filtering", purpose: "Kullanıcı benzerliği analizi" }, { name: "NLP", purpose: "Yorum ve tercih analizi" }, { name: "Content-Based Filtering", purpose: "Yemek özellik eşleştirme" }],
     team: [{ name: "Halitcan E.", role: "AI Developer" }, { name: "Backend Ekibi", role: "API & Veri Yönetimi" }],
     image: "https://images.unsplash.com/photo-1517248135467-4c7edcad34c4?w=1200&q=80", stats: "AI Powered", date: "2025",
+    alsoInCategories: ["platformlarimiz"],
   },
   {
     slug: "madeinyouu", category: "Yapay Zeka", categorySlug: "yapay-zeka", name: "MadeInYouu",
@@ -274,6 +279,7 @@ const defaultProjects: Project[] = [
     technologies: [{ name: "Python", purpose: "Backend ve model geliştirme" }, { name: "AI/ML", purpose: "Veri analizi ve tahminleme" }, { name: "Web Arayüz", purpose: "Kullanıcı dostu dashboard" }],
     team: [{ name: "Halitcan E.", role: "Lead Developer" }, { name: "AI Ekibi", role: "Model & Veri" }],
     image: "https://images.unsplash.com/photo-1555949963-aa79dcee981c?w=1200&q=80", stats: "AI Powered", date: "2025",
+    alsoInCategories: ["platformlarimiz"],
   },
 ];
 
@@ -291,7 +297,7 @@ type SiteDataContextType = {
 
 const SiteDataContext = createContext<SiteDataContextType | null>(null);
 
-const STORAGE_KEY = "runteg_site_data_v3";
+const STORAGE_KEY = "runteg_site_data_v4";
 
 function getInitialData(): SiteData {
   if (typeof window === "undefined") {
