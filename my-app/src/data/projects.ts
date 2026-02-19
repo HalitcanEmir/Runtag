@@ -6,6 +6,7 @@ export type ProjectTechnology = {
 export type ProjectMember = {
   name: string;
   role: string;
+  linkedin?: string;
 };
 
 export type Project = {
@@ -50,8 +51,7 @@ export const projects: Project[] = [
       { name: "Responsive Tasarım", purpose: "Tüm cihazlarda uyumlu görüntüleme" },
     ],
     team: [
-      { name: "Halitcan E.", role: "Full Stack Developer" },
-      { name: "Tasarım Ekibi", role: "UI/UX Design" },
+      { name: "Halitcan Emir", role: "Full Stack Developer", linkedin: "https://www.linkedin.com/in/halitcanemir/" },
     ],
     image: "https://images.unsplash.com/photo-1460925895917-afdab827c52f?w=1200&q=80",
     stats: "Yayında",
@@ -74,8 +74,8 @@ export const projects: Project[] = [
       { name: "TypeScript", purpose: "Tip güvenli geliştirme" },
     ],
     team: [
-      { name: "Halitcan E.", role: "Lead Developer" },
-      { name: "Tasarım Ekibi", role: "UI/UX & Liquid Glass Design" },
+      { name: "Halitcan Emir", role: "Developer", linkedin: "https://www.linkedin.com/in/halitcanemir/" },
+      { name: "Selçuk Demir", role: "Developer", linkedin: "https://www.linkedin.com/in/selçuk-demir-b339b938b/" },
     ],
     image: "https://images.unsplash.com/photo-1618005182384-a83a8bd57fbe?w=1200&q=80",
     stats: "Yayında",

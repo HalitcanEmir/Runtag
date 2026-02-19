@@ -187,7 +187,18 @@ export default function ProjePage() {
                       👤
                     </div>
                   </div>
-                  <h3 className="font-semibold text-white">{member.name}</h3>
+                  {member.linkedin ? (
+                    <a
+                      href={member.linkedin}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="font-semibold text-white hover:text-pink-400 transition-colors underline decoration-white/30 hover:decoration-pink-400 underline-offset-2"
+                    >
+                      {member.name}
+                    </a>
+                  ) : (
+                    <h3 className="font-semibold text-white">{member.name}</h3>
+                  )}
                   <p className="mt-1 text-xs text-white/60">{member.role}</p>
                 </div>
               ))}

@@ -5,7 +5,7 @@ import { createContext, useContext, useState, useEffect, ReactNode } from "react
 // ==================== TYPES ====================
 
 export type ProjectTechnology = { name: string; purpose: string };
-export type ProjectMember = { name: string; role: string };
+export type ProjectMember = { name: string; role: string; linkedin?: string };
 
 export type Project = {
   slug: string;
@@ -224,7 +224,7 @@ const defaultProjects: Project[] = [
     aim: "Mühendislik firmasının dijital varlığını güçlendirmek, potansiyel müşterilere hizmetleri etkili şekilde tanıtmak ve online teklif alma sürecini otomatikleştirmek.",
     stack: "Next.js · Tailwind CSS · SEO",
     technologies: [{ name: "Next.js", purpose: "SSR ve performanslı sayfa yükleme" }, { name: "Tailwind CSS", purpose: "Modern ve responsive arayüz tasarımı" }, { name: "SEO Optimizasyonu", purpose: "Arama motorlarında üst sıralarda yer alma" }, { name: "Responsive Tasarım", purpose: "Tüm cihazlarda uyumlu görüntüleme" }],
-    team: [{ name: "Halitcan E.", role: "Full Stack Developer" }, { name: "Tasarım Ekibi", role: "UI/UX Design" }],
+    team: [{ name: "Halitcan Emir", role: "Full Stack Developer", linkedin: "https://www.linkedin.com/in/halitcanemir/" }],
     image: "https://images.unsplash.com/photo-1460925895917-afdab827c52f?w=1200&q=80", stats: "Yayında", date: "2025",
   },
   {
@@ -234,7 +234,10 @@ const defaultProjects: Project[] = [
     aim: "Tech studio'nun projelerini, yeteneklerini ve ekibini profesyonel bir şekilde sergilemek. Liquid Glass tasarım dili ile sektörde fark yaratmak.",
     stack: "Next.js · Framer Motion · Tailwind CSS",
     technologies: [{ name: "Next.js", purpose: "Full-stack React framework" }, { name: "Framer Motion", purpose: "Animasyonlu geçişler ve etkileşimler" }, { name: "Tailwind CSS", purpose: "Liquid Glass tasarım sistemi" }, { name: "TypeScript", purpose: "Tip güvenli geliştirme" }],
-    team: [{ name: "Halitcan E.", role: "Lead Developer" }, { name: "Tasarım Ekibi", role: "UI/UX & Liquid Glass Design" }],
+    team: [
+      { name: "Halitcan Emir", role: "Developer", linkedin: "https://www.linkedin.com/in/halitcanemir/" },
+      { name: "Selçuk Demir", role: "Developer", linkedin: "https://www.linkedin.com/in/selçuk-demir-b339b938b/" },
+    ],
     image: "https://images.unsplash.com/photo-1618005182384-a83a8bd57fbe?w=1200&q=80", stats: "Yayında", date: "2025",
     alsoInCategories: ["platformlarimiz"],
   },
