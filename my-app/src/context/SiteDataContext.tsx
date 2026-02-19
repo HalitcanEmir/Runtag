@@ -266,14 +266,14 @@ const defaultProjects: Project[] = [
     image: "https://images.unsplash.com/photo-1517248135467-4c7edcad34c4?w=1200&q=80", stats: "AI Powered", date: "2025",
   },
   {
-    slug: "goruntu-tanimlama", category: "Yapay Zeka", categorySlug: "yapay-zeka", name: "Görüntü Tanıma Sistemi",
-    shortDescription: "Derin öğrenme tabanlı nesne ve sahne tanıma platformu",
-    longDescription: "Derin öğrenme ve bilgisayar görüşü teknolojileri kullanılarak geliştirilen görüntü tanıma sistemi. Yüklenen görsellerdeki nesneleri, sahneleri ve desenleri otomatik olarak tanımlayıp sınıflandırır.",
-    aim: "Bilgisayar görüşü alanında pratik bir uygulama geliştirmek. Derin öğrenme modellerinin gerçek dünya görüntülerinde kullanımını göstermek.",
-    stack: "Python · PyTorch · OpenCV",
-    technologies: [{ name: "PyTorch", purpose: "Derin öğrenme model eğitimi" }, { name: "OpenCV", purpose: "Görüntü işleme ve ön işleme" }, { name: "CNN", purpose: "Konvolüsyonel sinir ağı mimarisi" }, { name: "Transfer Learning", purpose: "Önceden eğitilmiş model adaptasyonu" }],
-    team: [{ name: "Halitcan E.", role: "ML Engineer" }, { name: "AI Ekibi", role: "Model Eğitimi & Test" }],
-    image: "https://images.unsplash.com/photo-1555949963-aa79dcee981c?w=1200&q=80", stats: "%94 doğruluk", date: "2025",
+    slug: "madeinyouu", category: "Yapay Zeka", categorySlug: "yapay-zeka", name: "MadeInYouu",
+    shortDescription: "AI destekli veri analizi ve karar destek platformu",
+    longDescription: "MadeInYouu, yapay zekâ ve veri analitiği teknolojileriyle geliştirilen bir platform. Sektörel çözümler, analiz araçları ve akıllı karar destek sistemleri sunar. MadeInYou Tarım Projesi ile aynı ekosistemin parçası olmakla birlikte, tasarım ve kullanım alanı açısından farklı bir projedir.",
+    aim: "Veri odaklı karar alma süreçlerini yapay zekâ ile güçlendirmek. Kullanıcılara özelleştirilmiş analitik çözümler sunmak.",
+    stack: "Python · AI/ML · Web",
+    technologies: [{ name: "Python", purpose: "Backend ve model geliştirme" }, { name: "AI/ML", purpose: "Veri analizi ve tahminleme" }, { name: "Web Arayüz", purpose: "Kullanıcı dostu dashboard" }],
+    team: [{ name: "Halitcan E.", role: "Lead Developer" }, { name: "AI Ekibi", role: "Model & Veri" }],
+    image: "https://images.unsplash.com/photo-1555949963-aa79dcee981c?w=1200&q=80", stats: "AI Powered", date: "2025",
   },
 ];
 
@@ -291,7 +291,7 @@ type SiteDataContextType = {
 
 const SiteDataContext = createContext<SiteDataContextType | null>(null);
 
-const STORAGE_KEY = "runteg_site_data_v2";
+const STORAGE_KEY = "runteg_site_data_v3";
 
 function getInitialData(): SiteData {
   if (typeof window === "undefined") {

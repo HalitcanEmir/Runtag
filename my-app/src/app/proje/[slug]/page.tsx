@@ -7,12 +7,15 @@ import Link from "next/link";
 import { useParams } from "next/navigation";
 import { useSiteData } from "@/context/SiteDataContext";
 
+const PROTECTED_SLUGS = ["madeinyouu", "restaurant-ai", "madeinyou-tarim"];
+
 export default function ProjePage() {
   const params = useParams();
   const slug = (params.slug as string)?.toLowerCase();
   const { data } = useSiteData();
   const project = data.projects.find((item) => item.slug === slug);
-  
+  const isProtected = project && PROTECTED_SLUGS.includes(slug ?? "");
+
   if (!project) {
     return (
       <div className="relative min-h-screen overflow-x-hidden">
@@ -39,6 +42,38 @@ export default function ProjePage() {
           </Link>
         </main>
 
+        <Footer />
+      </div>
+    );
+  }
+
+  if (isProtected) {
+    return (
+      <div className="relative min-h-screen overflow-x-hidden">
+        <div className="pointer-events-none fixed inset-0 z-0">
+          <div className="nebula nebula--purple absolute -left-32 -top-40 h-80 w-80" />
+          <div className="nebula nebula--blue absolute -right-40 top-40 h-96 w-96" />
+          <div className="nebula nebula--purple absolute bottom-[-10rem] right-20 h-72 w-72 opacity-60" />
+        </div>
+        <Navbar />
+        <main className="relative z-10 mx-auto flex max-w-2xl flex-col items-center px-4 pb-16 pt-32 text-center sm:px-6 lg:px-8">
+          <div className="mb-6 flex h-20 w-20 items-center justify-center rounded-full border border-pink-500/30 bg-pink-500/10 text-4xl">
+            ✨
+          </div>
+          <h1 className="text-2xl font-bold text-white sm:text-3xl">{project.name}</h1>
+          <p className="mt-6 rounded-2xl border border-white/20 bg-white/[0.08] px-8 py-6 text-lg font-medium text-white backdrop-blur-xl">
+            Çok yakında sizlerle!
+          </p>
+          <p className="mt-4 text-sm text-white/50">
+            Detaylar yakında paylaşılacak.
+          </p>
+          <Link
+            href="/projeler"
+            className="mt-8 rounded-full border border-white/20 bg-white/[0.08] px-6 py-3 text-sm font-semibold text-white backdrop-blur-xl transition-all duration-300 hover:border-white/30 hover:bg-white/[0.12]"
+          >
+            Projelere Dön
+          </Link>
+        </main>
         <Footer />
       </div>
     );
